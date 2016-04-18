@@ -51,11 +51,13 @@ class ReviewsPlugin extends BasePlugin
             'reviews/issuers/save'                  => array('action' => 'reviews/issuer/save'),
             'reviews/issuers/delete'                => array('action' => 'reviews/issuer/delete'),
 
+            'reviews/maps/index'                     => array('action' => 'reviews/idMap/index'),
             'reviews/maps/new'                      => 'reviews/maps/create',
             'reviews/maps/edit'                     => array('action' => 'reviews/idMap/edit'),
             'reviews/maps/save'                     => array('action' => 'reviews/idMap/save'),
             'reviews/maps/delete'                   => array('action' => 'reviews/idMap/delete'),
 
+            'reviews/parsers/index'                 => array('action' => 'reviews/parser/index'),
             'reviews/parsers/new'                   => 'reviews/parsers/create',
             'reviews/parsers/edit'                  => array('action' => 'reviews/parser/edit'),
             'reviews/parsers/save'                  => array('action' => 'reviews/parser/save'),

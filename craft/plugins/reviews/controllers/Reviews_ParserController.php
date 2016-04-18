@@ -11,6 +11,15 @@ class Reviews_ParserController extends BaseController
 {
     protected $allowAnonymous = false;
 
+    /**
+     * @throws HttpException
+     */
+    public function actionIndex() {
+
+        $parsers = craft()->reviews_parser->getParsers();;
+
+        $this->renderTemplate('reviews/parsers/index', ['parsers'=>$parsers]);
+    }
 
     /**
      * Saves a issuer

@@ -11,8 +11,6 @@ parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
 
 {% set selectedTab = 'issuers' %}
 
-{% set issuers = craft.reviews.getIssuers(0, 10) %}
-
 {% set content %}
 
 <div id="newIssuerContainer" class="buttons">
@@ -29,6 +27,7 @@ parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
+            <th scope="col">Review Count</th>
             <th scope="col">Status</th>
             <th scope="col">Action</th>
         </tr>
@@ -39,6 +38,7 @@ parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
         <tr data-id="{{ issuer.id }}" data-name="{{ issuer.name|t }}">
                 <td data-title="{{ 'ID'|t }}">{{ issuer.id }}</td>
                 <td scope="row" data-title="{{ 'Name'|t }}">{{ issuer.name|e }}</td>
+                <td scope="row" data-title="{{ 'Review Count'|t }}">{{ issuer.reviews }}</td>
                 <td data-title="{{ 'Status'|t }}">{{ issuer.active == 1 ? 'Active' : 'Inactive' }}</td>
                 <td data-title="{{ 'Actions'|t }}">
                     <a href="{{ url('reviews/issuers/edit', { id: issuer.id }) }}" class="edit icon"></a>

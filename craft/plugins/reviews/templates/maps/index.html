@@ -11,8 +11,6 @@ parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
 
 {% set selectedTab = 'maps' %}
 
-{% set maps = craft.reviews.getMaps(0, 10) %}
-
 {% set content %}
 
 <div id="newMapContainer" class="buttons">
@@ -31,6 +29,7 @@ parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
         <th class="col">Name</th>
         <th class="col">Card ID</th>
         <th class="col">Alt ID</th>
+        <th class="col">Review Count</th>
         <th class="col">Status</th>
         <th class="col">Action</th>
     </tr>
@@ -43,6 +42,7 @@ parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
         <td scope="row" data-title="{{ 'Name'|t }}">{{ map.name|e }}</td>
         <td data-title="{{ 'Card ID' }}">{{ map.card_id }}</td>
         <td data-title="{{ 'Alternate ID' }}">{{ map.alt_id }}</td>
+        <td data-title="{{ 'Review Count' }}">{{ map.reviews }}</td>
         <td data-title="{{ 'Status'|t }}">{{ map.active == 1 ? 'Active' : 'Inactive' }}</td>
         <td>
             <a href="{{ url('reviews/maps/edit', { id: map.id }) }}" class="edit icon"></a>

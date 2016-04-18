@@ -68,6 +68,16 @@ class Reviews_ReviewService extends BaseApplicationComponent
     }
 
     /**
+     * Get review count
+     *
+     * @param array $filter
+     * @return int
+     */
+    public function getReviewCount($filter=[]) {
+        return $this->collection->count($filter);
+    }
+
+    /**
      * Disable reviews
      * @param array $filter
      * @return MongoDB\DeleteResult

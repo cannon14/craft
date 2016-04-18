@@ -15,6 +15,26 @@ class Reviews_IdMapController extends BaseController
     /**
      * @throws HttpException
      */
+    public function actionIndex() {
+        $maps = craft()->reviews_idMap->getMaps();
+
+        $mapArray = [];
+        foreach($maps as $map) {
+            $attributes = [];
+            foreach($map->getAttributes() as $key=>$value) {
+                $attributes[$key]=$value;
+            }
+            $attributes['reviews'] = craft()->reviews_review->getReviewCount(['Product ID'=>$attributes['alt_id']]);
+            $mapArray[]=$attributes;
+
+        }
+
+        $this->renderTemplate('reviews/maps/index', ['maps'=>$mapArray]);
+    }
+
+    /**
+     * @throws HttpException
+     */
     public function actionEdit()
     {
         $mapId = craft()->request->getParam('id');

@@ -11,6 +11,7 @@ class Reviews_IssuerController extends BaseController
 {
     protected $allowAnonymous = false;
 
+
     /**
      * @throws HttpException
      */
@@ -18,12 +19,18 @@ class Reviews_IssuerController extends BaseController
     {
         $issuers = craft()->reviews_issuer->getIssuers();
 
+        $issuerArray = [];
         foreach($issuers as $issuer) {
-            $count = craft()->reviews_review->getReviewCountByIssuer($issuer->name);
-            $issuer->setAttribute('review_count', $count);
+            $attributes = [];
+            foreach($issuer->getAttributes() as $key=>$value) {
+                $attributes[$key]=$value;
+            }
+            $attributes['reviews'] = craft()->reviews_review->getReviewCount(['issuer'=>$attributes['name']]);
+            $issuerArray[]=$attributes;
+
         }
 
-        $this->renderTemplate('reviews/issuers/index', ['issuers'=>$issuers]);
+        $this->renderTemplate('reviews/issuers/index', ['issuers'=>$issuerArray]);
     }
 
     /**
