@@ -1,0 +1,86 @@
+{% extends "_layouts/cp" %}
+
+{% import "_includes/forms" as forms %}
+
+{% set title = "Create Parser" %}
+
+{% set content %}
+
+<form method="POST" action="{{ url('reviews/parsers/save') }}" accept-charset="UTF-8">
+    <input type="hidden" name="redirect" value="reviews/parsers">
+
+    {{ forms.lightswitchField({
+    label: "Status",
+    instructions: "Toggle map active or inactive",
+    name: "active",
+    on: true
+    }) }}
+
+    {{ forms.textField({
+    label: "Name",
+    instructions: "Enter Parser Name",
+    name: "name",
+    }) }}
+
+    {{ forms.textAreaField({
+    label: "Description",
+    instructions: "Enter a Parser Description",
+    rows: 10,
+    name: "description",
+    }) }}
+
+    {{ forms.textField({
+    label: "Issuer ID",
+    instructions: "Enter Issuer ID",
+    name: "issuer_id",
+    }) }}
+
+    <h2>Column Fields</h2>
+    <div id="columns">
+        <div class="field">
+            <div class="heading">
+                <label>Column Field 1 <!--a class="delete icon" title="{{ 'Delete'|t }}" role="button"></a--></label>
+                <div class="instructions"><p>Enter Column Field Name that Matched CSV file Header</p>
+                </div>
+            </div>
+            <div class="input ltr">
+                <input type="text" autocomplete="off" name="column1" class="text fullwidth">
+            </div>
+        </div>
+    </div>
+
+    <a class="add icon" title="{{ 'Add'|t }}" role="button"> Add Column</a>
+
+    <hr>
+
+    <input class="btn submit" type="submit" value="{{ 'Save' }}">
+</form>
+
+{% endset %}
+
+{% set js %}
+$(document).ready(function() {
+    $('.delete').on('click', function() {
+        $(this).closest('.field').remove();
+    });
+
+    var count = 2;
+
+    $('.add').on('click', function() {
+        var html = '<div class="field">' +
+            '<div class="heading">' +
+            '<label>Column Field '+count+' <a class="delete icon" title="{{ 'Delete'|t }}" role="button"></a></label>' +
+            '<div class="instructions"><p>Enter Column Field Name that Matched CSV file Header</p>' +
+            '</div>' +
+            '</div>' +
+            '<div class="input ltr">' +
+            '<input type="text" autocomplete="off" name="column'+count+'" class="text fullwidth">' +
+            '</div>' +
+            '</div>';
+        $('#columns').append(html);
+
+        count++;
+    });
+});
+{% endset %}
+{% includeJs js %}

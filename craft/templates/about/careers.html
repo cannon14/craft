@@ -1,0 +1,95 @@
+<div class="other-subnav-hldr">
+    <ol class="breadcrumb-other">
+        <li><a href="/">Credit Cards </a> <i class="fa fa-angle-right"></i></li>
+        <li><a href="/about-us">About Us </a> <i class="fa fa-angle-right"></i></li>
+        <li>Careers</li>
+    </ol>
+    <ol class="breadcrumb">
+        <li><a href="/about-us">Overview</a></li>
+        <li><a href="/about-us/leadership-team">Leadership Team</a></li>
+        <li><a href="/about-us/media-center">Media Center</a></li>
+        <li class="active">Careers</li>
+    </ol>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-md-24">
+        <div class="careers-banner-hldr">
+            <img class="img-responsive" src="{{ entry.image.first().url }}">
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+        {{ entry.body }}
+</div>
+
+<div class="row">
+    <div class="col-md-24">
+        <hr>
+        <h2>Current career opportunities</h2>
+        <p>Listed below are the current positions open at CreditCards.com. Please send resumes to <a href="mailto:careers@creditcards.com">careers@creditcards.com</a>, indicating the position you are applying for in the subject line.</p>
+        <a name="all-pos"></a>
+        <ul class="list-unstyled">
+            {% for block in entry.careers %}
+            <li><a href="#{{ block.jobTitle | kebab }}">{{ block.jobTitle }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+
+        {% for block in entry.careers %}
+        <a name="{{ block.jobTitle | kebab }}" id="{{ block.jobTitle | kebab }}"></a>
+        <h2 class="alignLeft">{{ block.jobTitle }}</h2>
+
+        <p>
+            <strong>Location:</strong> {{ block.jobLocation }}
+            <br>
+            <strong>Job Type:</strong> {{ block.jobType }}
+            <br>
+            <strong>Salary:</strong> {{ block.salary }}
+            <br>
+        </p>
+
+        {% if block.jobDescription != '' %}
+        <p><strong>Job Description:</strong></p>
+        {{ block.jobDescription }}
+        <br>
+        {% endif %}
+
+
+        {% if block.jobResponsibilities != '' %}
+        <p><strong>Job Responsibilities:</strong></p>
+        {{ block.jobResponsibilities }}
+        <br>
+        {% endif %}
+
+        {% if block.qualifications != '' %}
+        <p><strong>Qualifications:</strong></p>
+        {{ block.qualifications }}
+        <br>
+        {% endif %}
+
+        {% if block.preferredQualifications != '' %}
+        <p><strong>Preferred Qualifications:</strong></p>
+        {{ block.preferredQualifications }}
+        <br>
+        {% endif %}
+
+
+        {% if block.other != '' %}
+        <p><strong>Other:</strong></p>
+        {{ block.other }}
+        <br>
+        {% endif %}
+
+        <hr>
+
+        {% endfor %}
+
+    </div><!--column-->
+</div><!--row-->

@@ -1,0 +1,54 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Feeds" %}
+
+{% set content %}
+
+{% import "_includes/forms" as forms %}
+
+<form method="POST" action="{{ actionUrl('productFeeds_Feed/update') }}" accept-charset="UTF-8">
+<input type="hidden" name="redirect" value="productFeeds/index">
+<input type="hidden" name="id" value="{{ feed.id }}">
+
+{{ forms.lightswitchField({
+label: "Status",
+instructions: "Toggle feed active or inactive",
+name: "status",
+on: feed.active
+}) }}
+
+{{ forms.textField({
+label: "ID",
+instructions: "Feed ID (Can't be edited).",
+name: "id",
+value: feed.id,
+disabled:true
+}) }}
+
+{{ forms.textField({
+label: "Name",
+instructions: "Add the name of the feed.",
+name: "name",
+value: feed.name
+}) }}
+
+
+{{ forms.textField({
+label: "URL",
+instructions: "Add the feed url",
+name: "url",
+value: feed.url
+}) }}
+
+
+{{ forms.textField({
+label: "Key",
+instructions: "Add the feed key",
+name: "key",
+value: feed.key
+}) }}
+
+<input class="btn submit" type="submit" value="{{ 'Update' }}">
+</form>
+
+{% endset %}

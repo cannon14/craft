@@ -1,0 +1,33 @@
+<!-- Site Featured Cards Block-->
+<div class="featured-block">
+    <div class="container">
+        <div class="featured-title">
+            <h3>Featured Offers from our Partners</h3>
+        </div>
+        <div class="row">
+            {% for featured in entry.homepageFeaturedOffers %}
+            <div class="col-md-6">
+                <div class="featured-offers-hldr">
+                    <div class="featured-card">
+                        <a href="{{ featured.url }}">
+                            <img src="{{ featured.image }}" alt="Best {{ featured.category }} Credit Card">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="http://www.creditcards.com/cash-back.php">
+                            {{ featured.title }}
+                        </a>
+                    </h2>
+                    <p>{{ featured.text }}</p>
+                    <div class="featured-bottom text-center">
+                        <a href="{{ featured.url }}">
+                            {{ featured.category }} Credit Cards
+                            <i class="fa fa-angle-right fa-lg" style="color:#fff; float:right;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div><!--column-->
+            {% endfor %}
+        </div><!--row-->
+    </div><!--container-->
+</div><!--featured-block-->

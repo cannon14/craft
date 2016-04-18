@@ -1,0 +1,63 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Products"|t %}
+
+{% set tabs = {
+Products: { label: "Products"|t, url: url('products/index') },
+} %}
+
+{% set selectedTab = 'Products' %}
+
+{% set cards = craft.products.getCards(0, 10) %}
+
+{% set content %}
+
+<table class="data fullwidth">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Card ID</th>
+            <th>Name</th>
+            <th>Issuer</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if cards|length > 0 %}
+        {% for card in cards %}
+            <tr>
+                <td><img src="http://www.imgsynergy.com/191x120/{{ card.image }}" alt="{{ card.name }}" style="width:25%"/></td>
+                <td>{{ card.card_id }}</td>
+                <td>{{ card.name|e }}</td>
+                <td>{{ card.issuer_name|e }}</td>
+                <td>{{ card.active == 1 ? 'Active' : 'Inactive' }}</td>
+                <td>
+                    <a href="{{ actionUrl('products_Creditcard/edit', { id: card.card_id }) }}" class="edit icon"></a>
+                    &nbsp;&nbsp;
+                    <a href="{{ actionUrl('products_Creditcard/delete', { id: card.card_id }) }}" class="delete icon"></a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4">No Cards!</td>
+            </tr>
+        {% endif %}
+    </tbody>
+
+</table>
+
+{% endset %}
+
+{% set pagination %}
+
+$(document).ready(function() {
+
+
+
+});
+
+{% endset %}
+
+{% includeJs pagination %}

@@ -1,0 +1,181 @@
+{#
+# Best Credit Cards Page template
+# ---------------
+#
+# When this template gets loaded, it will be because someone has accessed
+# http://yoursite.com/ (without any URI). Craft checks to see if you have
+# a Single section set to be the Homepage (as you do, by default), and
+# loads the section’s Template (this file). A special ‘entry’ variable
+# will already be set for you, assigned to the Homepage entry.
+#
+# It's worth noting that even if you didn't have a Homepage Single section,
+# as long as this template remains at craft/templates/index.html, it
+# would still be the one to get loaded when accessing http://yoursite.com/,
+# albeit without an ‘entry’ variable already set for you.
+#
+# See this page for more details on how Craft routes requests:
+# http://craftcms.com/docs/routing
+#}
+
+{% extends "layouts/_site" %}
+
+{% includeCssFile '/assets/css/cc-card-category.css' %}
+
+{% includeJsFile '/assets/js/category-page.js' %}
+
+{% set title = entry.title %}
+
+{% block content %}
+
+<div class="card-category-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-24">
+                <div class="row">
+                    <div class="col-md-24">
+                        <a name="featured"></a>
+                        <div class="card-category-top">
+                            <div class="category-description-block">
+                                <h1  style="font-weight:bold;">Best Credit Card Offers</h1>
+                                <br />
+                                <p>We have partnered with banks and issuers to bring you the best credit cards. Each section below lists the two best credit cards in that category. Compare cards in each category to find the best credit card that meets your needs.        </p>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="card-category-disclosure-hldr"><a href="#" data-toggle="modal" data-target="#myModalDisclosure"><img  class="pull-right" src="/assets/images/advertiser_dis_text.png" /></a>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        {% for block in entry.bestCreditCards %}
+                            <div class="col-xs-24 col-sm-8 col-md-8">
+                            <div class="res-bestcards-hldr">
+                                {{ block.blockTitle }}
+                                {{ block.blockBody }}
+
+                                {% set catId = block.cardCategory.first().categoryId %}
+                                {% set cards = craft.products.getCardsByCategoryId(catId, 2) %}
+                                {% for card in cards %}
+                                    <div class="res-bestcards-title">
+                                        <a target="_blank" href="http://www.creditcards.com/oc/?221210070">
+                                            {{ card.name | raw }}
+                                        </a>
+                                    </div>
+
+                                    <!--CARD IMAGE-->
+                                    <div class="res-bestcards-card">
+                                        <a href="http://www.creditcards.com/oc/?221210070" target="_blank">
+                                            <img src="http://www.imgsynergy.com/191x120/{{ card.image }}" border="0" alt="{{ card.name | raw }} Card Application" />
+                                        </a>
+                                    </div>
+
+                                    <!--CARD DATA-->
+                                    <div class="res-data-hldr">
+                                        <table width="70%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td colspan="2" class="res-data-title-purchase">PURCHASES</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="res-data-title">Intro APR:</td>
+                                                <td class="res-data-content">{{ card.purchases_intro_apr_display }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="res-data-title">Intro APR Period:</td>
+                                                {% set purchases_intro_apr_period_value = 'N/A' %}
+                                                {% if card.purchases_intro_apr_period_value != 0 %}
+                                                    {% set purchases_intro_apr_period_value = card.purchases_intro_apr_period_value~' months' %}
+                                                {% endif %}
+                                                <td class="res-data-content">{{ purchases_intro_apr_period_value }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="res-data-title">Regular APR:</td>
+                                                <td class="res-data-content">{{ card.purchases_reg_apr_display }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <!--CARD BUTTON-->
+                                    <div class="res-btn-hldr">
+                                        <a class="btn btn-apply btn-lg" href="http://www.creditcards.com/oc/?221210070" target="_blank" name="Chase Sapphire Preferred&#174; Card">
+                                            <i class="fa fa-lock fa-lg"></i> &nbsp;APPLY NOW</a>
+                                    </div>
+
+                                    {% if loop.index0 == 0 %}
+                                        <hr>
+                                        <br>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <hr>
+                            <br />
+                        </div>
+                        {% endfor %}
+
+                        <!--Additional Info Box -->
+                        <div class="col-xs-24 col-sm-8 col-md-8">
+                            <div class="res-bestcards-hldr">
+                                <h3>Help finding the best credit cards</h3>
+                                <p>
+                                    <a href="/credit-card-news/help/6-consider-before-choosing-picking-credit-card-6000.php" class="res-best-card-news-link">
+                                        6 things to consider before choosing a credit card</a>
+                                    <br/>
+                                    When picking a card, the No. 1 tip is to know yourself and how you will use the card.
+                                    <br/>
+                                    <br/>
+
+                                    <a href="/credit-card-news/help/7-ways-to-get-most-from-rewards-credit-cards-6000.php" class="res-best-card-news-link">
+                                        7 ways to get the most from rewards credit cards</a>
+                                    <br/>
+                                    With virtually all credit card issuers offering rewards, the issue is not whether you should get a rewards card, but what type of rewards card is best for you.
+                                    <br/>
+                                    <br/>
+
+                                    <a href="/credit-card-news/help/9-things-you-should-know-about-balance-transfers-6000.php" class="res-best-card-news-link">
+                                        9 things to know about balance transfers</a>
+                                    <br/>
+                                    Transferring the balance to a card with a lower interest may sound like an enticing way to save cash but it's not quite as simple as it sounds.
+                                    <br/>
+                                    <br/>
+
+                                    <a href="/credit-card-news/help/worst-credit-card-mistakes-6000.php" class="res-best-card-news-link">
+                                        10 worst credit card mistakes</a>
+                                    <br/>
+                                    Making these 10 mistakes will turn good credit into bad and bad credit into lenders-won't-go-near-you credit.
+                                    <br/>
+                                    <br/>
+
+                                    See our
+                                    <a href="/credit-card-news/help/" class="res-best-card-news-link">
+                                        credit card help</a> section
+                                </p>
+                            </div>
+                        </div><!--Additional Info Box-->
+                    </div><!--column-->
+                </div><!--row-->
+                <!--this variable unfortunately contains a special page layout added directly into CMS that hides the normal page.-->
+                <div class="card-category-disclosure-hldr-bottom">
+                    <a href="#" data-toggle="modal" data-target="#myModalDisclosure">
+                        <img class="pull-right" src="/assets/images/advertiser_dis_text.png" />
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+                <!--card-category-disclosure-hldr-->
+            </div><!--col-lg-24-->
+        </div><!--row-->
+    </div><!--container-->
+</div><!--card-category-block-->
+
+<!-- Site Back Up Block-->
+<div class="back-to-top-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-24 see-terms-footer">
+                See the online credit card specials applications for details about terms and conditions of offer. Reasonable efforts are made to maintain accurate information. However all credit card information is presented without warranty. When you click on the " Apply Now " button you can review the credit card terms and conditions on the credit card issuer's web site.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-24 see-terms-footer-mobile"> * For additional rates, fees and costs see issuer's website for detailed pricing and terms. </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

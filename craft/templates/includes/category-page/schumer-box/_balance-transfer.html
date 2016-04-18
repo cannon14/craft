@@ -1,0 +1,152 @@
+<div class="res-schumer-box ">
+    <div class="row">
+        <div class="col-sm-18 col-md-18 col-lg-18">
+            {% set titleLink = '<a href="credit-cards/'~card.slug~'?catId='~category.categoryId~'&cardId='~card.card_id~'" name="'~card.card_id~'" id="a'~card.card_id~'">'~card.name | raw~'</a>' %}
+            {% if map.rank == 1 %}
+            <div class="res-offer-left-featured">
+                <span class="res-top-pick2"></span>
+                {{ titleLink | raw}}
+            </div>
+            {% else %}
+            <div class="res-offer-left">
+                {{ titleLink | raw}}
+            </div>
+            {% endif %}
+            <!--res-offer--left-->
+            <div class="row">
+                <div class="col-xs-24 col-sm-8 col-md-9 col-lg-7">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-24 col-md-24 col-lg-24">
+                            <div class="res-cc-card-art-align">
+                                <a name="&lid={{card.slug}}" target="_blank" href="{{ map.position_link }}">
+                                    <img border="0" alt="{{card.name | raw}} Credit Card Application" class="img-responsive" src="http://www.imgsynergy.com/191x120/{{card.image}}">
+                                </a>
+                            </div>
+
+                            <div class="mobile-hide">
+                            </div>
+                            <!--mobile-hide-->
+                        </div>
+                        <div class="col-xs-12 col-sm-24 col-md-24 col-lg-24">
+                            <div class="res-field-apply-now-768">
+                                <a name="&lid={{card.slug}}" target="_blank" href="{{map.position_link}}" class="btn btn-apply btn-lg btn-block">
+                                    <i class="fa fa-lock fa-lg"></i>
+                                    &nbsp;APPLY
+                                    ONLINE</a>
+                                <br>
+                                <!--Only show the apply by phone number button if card has a phone number-->
+                                <p class="issuer">at {{card.issuer_name}}'s <br>secure site</p>
+                                <a onclick="var s=s_gi('ccardsccdc-us'); s.linkTrackVars='eVar25,products,events'; s.linktrackevents='event4'; s.events='event4'; s.eVar25='12'; s.products='12;220610109;0;0'; s.tl(this,'o','Apply by Phone');" href="tel:877-827-8836" class="btn btn-primary btn-lg btn-block">
+                                    <i class="fa fa-phone fa-lg"></i> &nbsp;APPLY BY PHONE
+                                </a>
+
+                                <div class="credit-needed-hldr">Credit Needed <span style="color:#16487b  ; font-weight:bold;"><br>{{card.credit_needed_display}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--column-->
+                <div class="col-xs-24 col-sm-14 col-md-15 col-lg-17">
+                    <div class="res-details">
+                        {{ card.bullets | raw}}
+                        <ul>
+                            <li>See additional <a href="credit-cards/{{card.slug}}?catId={{category.categoryId}}&cardId={{card.card_id}}" name="{{card.card_id}}" id="a{{card.card_id}}">{{ card.name | raw }} details</a></li>
+                        </ul>
+                    </div>
+                    <!--res-details-->
+                    <div class="show-more-link">
+                        <a href="#" >Show More <i class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+                <!--column-->
+                <!--column-->
+            </div>
+            <!--row-->
+
+        </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-6 apply-now-btn-padding">
+            <div class="res-field-apply-now">
+                <a name="&amp;lid={{card.slug}}" target="_blank" href="{{map.position_link}}" class="btn btn-apply btn-lg">
+                    <i class="fa fa-lock fa-lg"></i>
+                    &nbsp;APPLY NOW
+                </a>
+                <br>
+                <p>at {{card.issuer_name}}'s <br>
+                    secure site</p>
+                <p class="apply-call">
+                    <span>or call {{card.issuer_name}} at <br><b>{{ '1-800-###-####' }}</b></span>
+                </p>
+                <br>
+
+                <div class="credit-needed-hldr">Credit Needed <span style="color:#16487b; font-weight:bold;"><br>{{card.credit_needed_display}}</span>
+                </div>
+            </div>
+        </div>
+        <!--column-->
+
+    </div>
+    <!--column-->
+
+    <div class="row">
+        <div class="col-sm-24 col-md-24 col-lg-24">
+            <div class="res-card-data-hldr">
+
+
+                <ul class="responsive-table-bt">
+                    <li class="first-row">
+                        <dl>
+                            <dt>Balance Transfers Intro APR</dt>
+                            <dd>{{ card.bt_intro_apr_display}}
+                                <input type="hidden" value="0% Intro APR" id="bt-intro-apr-220610109">
+                                <input type="hidden" value="18" id="bt-intro-period-{{card.card_id}}">
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Balance Transfer Fee</dt>
+                            <dd>
+                                ???
+                                <input type="hidden" value="3.000" id="bt-fee-{{card.card_id}}">
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Regular
+                                APR
+                            </dt>
+                            <dd>
+                                {{card.bt_reg_apr_display}}
+                                <input type="hidden" value="21.240" id="bt-max-apr-220610109">
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Annual
+                                Fee
+                            </dt>
+                            <dd>{{card.bt_annual_fee_display}}</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                Credit Needed
+                            </dt>
+                            <dd>{{card.credit_needed_display}}</dd>
+                        </dl>
+                        <dl>
+                            <dt><a id="card-estimate-{{card.card_id}}" style="color:#66c0ff; cursor:pointer; text-decoration: none" class="card-estimate-button" name="card-estimate-button">
+                                <i data-target="#bt-calculator-modal" data-toggle="modal" class="fa fa-info-circle fa-lg card-estimate-button"></i>
+                            </a>
+                                Potential Savings Estimate*
+                            </dt>
+                            <input type="hidden" id="bt-calc-exclude-{{card.card_id}}" value="0">
+                            <dd class="potential_savings" id="bt-calc-result-{{card.card_id}}">$253.02</dd>
+                        </dl>
+                    </li>
+                </ul>
+                <div style="clear:both;"></div>
+            </div>
+            <!--res-card-data-hldr-->
+        </div>
+        <!--column-->
+    </div>
+    <!--row-->
+</div>

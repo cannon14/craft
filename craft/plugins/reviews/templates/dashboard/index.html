@@ -1,0 +1,193 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Reviews Dashboard"|t %}
+
+{% set tabs = {
+dashboard:    { label: "Dashboard"|t, url: url('reviews/dashboard/index') },
+issuers: { label: "Issuers"|t, url: url('reviews/issuers/index') },
+maps: { label: "Maps"|t, url: url('reviews/maps/index') },
+parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
+} %}
+
+{% set selectedTab = 'dashboard' %}
+
+{% set content %}
+
+<form id="uploadReviews" method="post" action="" accept-charset="UTF-8" enctype="multipart/form-data">
+    <input type="hidden" name="redirect" value="" />
+
+    <div class="heading">
+        <label class="required" for="issuer">Issuer</label>
+    </div>
+    <select name="issuer" id="issuer">
+        <option value="">--Select an Issuer--</option>
+        {% for issuer in issuers %}
+            <option value="{{ issuer.name }}">{{ issuer.name }}</option>
+        {% endfor %}
+    </select>
+
+    <p><input type="file" name="file"></p>
+
+    <input type="submit" class="btn submit" value="Upload">
+</form>
+
+<div style="margin-top:20px" id="output"></div>
+
+<hr>
+
+<form id="disableReviews" method="POST" action="" accept-charset="UTF-8">
+
+    <input class="btn submit" type="submit" value="{{ 'Execute' }}">
+    <label>Disable reviews</label>
+
+    <select name="issuerToDisable" id="issuerToDisable">
+        <option value="">--Select an Issuer--</option>
+        <option value="all">All Issuers</option>
+        {% for issuer in issuers %}
+        <option value="{{ issuer.name }}">{{ issuer.name }}</option>
+        {% endfor %}
+    </select>
+
+</form>
+
+<div style="margin-top:20px" id="issuerToDisableOutput"></div>
+
+<hr>
+
+<form id="deleteReviews" method="POST" action="" accept-charset="UTF-8">
+
+    <input class="btn submit" type="submit" value="{{ 'Execute' }}">
+    <label>Delete Reviews</label>
+
+    <select name="issuerToDelete" id="issuerToDelete">
+        <option value="">--Select an Issuer--</option>
+        <option value="all">All Issuers</option>
+        {% for issuer in issuers %}
+        <option value="{{ issuer.name }}">{{ issuer.name }}</option>
+        {% endfor %}
+    </select>
+
+</form>
+
+<div style="margin-top:20px" id="issuerToDeleteOutput"></div>
+
+
+{% endset %}
+
+{% set js %}
+$(document).ready(function() {
+    $("#uploadReviews").submit(function(e) {
+        e.preventDefault();
+
+        var url = Craft.getActionUrl('reviews/review/upload');
+
+        var files = $(this).find("[name=file]")[0].files,
+            issuer = $(this).find('#issuer').val(),
+            formdata = new FormData(),
+            file,
+            reader;
+
+        formdata.append('issuer', issuer);
+
+        for (var i = 0; i < files.length; i++) {
+        file = files[i];
+
+        if (window.FileReader) {
+            reader = new FileReader();
+            reader.readAsDataURL(file);
+        }
+            formdata.append("files[]", file);
+        }
+
+        $("#output").html("Uploading...");
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function(json) {
+            window.json = json;
+            console.log(json);
+
+            var errors = json['errors'],
+            success = json['success'],
+            html = "<p><b>" + errors.length + " errors, " + success.length + " successfully uploaded</b></p>";
+
+            $("#output").html(html);
+
+            $('form').trigger('reset');
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert("ERROR: " + xhr.status + " " + thrownError);
+        }
+    });
+
+    return false;
+    });
+
+    $("#disableReviews").submit(function(e) {
+        e.preventDefault();
+        var issuer = $('#issuerToDisable').val(),
+        msg = 'Are you sure you wish to disable all '+issuer+' reviews?';
+
+        if(issuer == '') {
+            alert('You must select an Issuer!');
+            return false;
+        }
+        else if(issuer == 'all') {
+            msg = 'Are you sure you wish to disable ALL reviews?';
+        }
+
+        var proceed = confirm(msg);
+
+        if(proceed == true) {
+            var url = Craft.getActionUrl('reviews/review/disable')
+
+            $.post(url, { issuer: issuer},
+                function(response){
+                    if(response['success']) {
+                        html = "<p><strong>" + response['found'] +" reviews successfully disabled.</strong></p>";
+                    }
+                    else {
+                        html = "<p><strong>Error occurred trying to disable reviews.</strong></p>";
+                    }
+                $("#issuerToDisableOutput").html(html);
+            });
+        }
+    });
+
+    $("#deleteReviews").submit(function(e) {
+        e.preventDefault();
+        var issuer = $('#issuerToDelete').val(),
+            msg = 'Are you sure you wish to delete all '+issuer+' reviews?';
+            if(issuer == '') {
+                alert('You must select an Issuer!');
+                return false;
+            }
+            else if(issuer == 'all') {
+                msg = 'Are you sure you wish to delete ALL reviews?';
+            }
+
+        var proceed = confirm(msg);
+
+        if(proceed == true) {
+            var url = Craft.getActionUrl('reviews/review/delete')
+
+            $.post(url, { issuer: issuer},
+                function(response){
+                    if(response['success']) {
+                        html = "<p><strong>" + response['count'] +" successfully deleted.</strong></p>";
+                    }
+                    else {
+                        html = "<p><strong>Error occurred trying to delete reviews.</strong></p>";
+                    }
+                $("#issuerToDeleteOutput").html(html);
+            });
+        }
+    });
+});
+{% endset %}
+
+{% includeJs js %}

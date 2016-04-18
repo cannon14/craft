@@ -1,0 +1,33 @@
+
+<div class="other-subnav-hldr">
+    <ol class="breadcrumb-other">
+        <li><a href="/">Credit Cards </a> <i class="fa fa-angle-right"></i></li>
+        <li><a href="/about-us">About Us </a> <i class="fa fa-angle-right"></i></li>
+        <li>Leadership Team </li>
+    </ol>
+    <ol class="breadcrumb">
+        <li><a href="/about-us">Overview </a></li>
+        <li class="active">Leadership Team</li>
+        <li><a href="/about-us/media-center">Media Center</a></li>
+        <li><a href="/about-us/careers">Careers</a></li>
+    </ol>
+</div>
+<br>
+<h1>{{ entry.title }}</h1>
+<br>
+<br>
+{% for block in entry.leadershipTeam %}
+
+<div class="leaders">
+
+    <img align="left" alt="{{ block.memberName }}" class="headshot" src="{{ block.image.first().url }}">
+    <br>
+    <p style="margin-bottom:0"><strong>{{ block.memberName }}</strong></p>
+    <p style="margin-bottom:0"><em>{{ block.memberTitle }}</em></p>
+    <br>
+    {{ block.bio }}
+    <br>
+</div>
+
+{% endfor %}
+

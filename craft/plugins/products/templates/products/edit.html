@@ -1,0 +1,566 @@
+{% extends "_layouts/cp" %}
+
+{% set title = card.name %}
+
+{% set content %}
+
+{% includeCssResource "lib/redactor/redactor.css" %}
+{% includeJsResource "lib/redactor/redactor.js" %}
+{% import "_includes/forms" as forms %}
+
+{% set myJs %}
+    (function() {
+    $('.redactor-field').redactor({
+        "buttons": ["format","bold","italic","lists","link","file","horizontalrule"],
+        "plugins": ["source","fullscreen","table"],
+        autoresize: true,
+        minHeight: 200
+    });
+    })();
+{% endset %}
+
+{% includeJs myJs %}
+
+
+
+<div>
+    <span style="width:50%; float:left;">
+        <img src="http://www.imgsynergy.com/191x120/{{ card.image }}">
+    </span>
+    <span style="width:50%; float:left; text-align:right">
+        <a class="btn" href="/cccomus/products">Back to Products</a>
+    </span>
+</div>
+<div style="clear:left"></div>
+
+<hr>
+
+<form method="POST" action="{{ actionUrl('products_Creditcard/update') }}" accept-charset="UTF-8">
+    <input type="hidden" name="redirect" value="products">
+    <input type="hidden" name="card_id" value="{{ card.card_id }}">
+
+    <div>
+        <span style="width: 45%; float:left">
+            {{ forms.lightswitchField({
+            label: "Status",
+            instructions: "Toggle card active or inactive",
+            name: "active",
+            on: card.active
+            }) }}
+        </span>
+        <span style="width: 45%; float:left;">
+            {{ forms.textField({
+            label: "Last updated (On Feed)",
+            instructions: "Update the credit needed display",
+            name: "last_updated_on_feed",
+            value: card.last_updated_on_feed,
+            disabled: true
+            }) }}
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+    {{ forms.textField({
+    label: "Card ID",
+    instructions: "Update Card ID",
+    name: "id",
+    value: card.card_id,
+    }) }}
+
+    {{ forms.textField({
+    label: "Name",
+    instructions: "Update the name of the card.",
+    name: "name",
+    value: card.name
+    }) }}
+
+    {{ forms.textField({
+    label: "Slug",
+    instructions: "Update the card slug",
+    name: "slug",
+    value: card.slug
+    }) }}
+
+    {{ forms.textField({
+    label: "Link URL",
+    instructions: "Update the link url",
+    name: "link_url",
+    value: card.link_url
+    }) }}
+
+    {{ forms.textAreaField({
+    label: "Bullets",
+    instructions: "Update the card bullets",
+    rows: 10,
+    name: "bullets",
+    value: card.bullets,
+    class: "redactor-field"
+    }) }}
+
+    {{ forms.textField({
+    label: "Image",
+    instructions: "Update the image",
+    name: "image",
+    value: card.image
+    }) }}
+
+    <div style="height:100px">
+        <span style="width: 45%; float:left">
+        {{ forms.textField({
+        label: "Issuer ID",
+        instructions: "Update the issuer id",
+        name: "issuer_id",
+        value: card.issuer_id
+        }) }}
+        </span>
+        <span style="width:45%; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Issuer Name",
+        instructions: "Update the issuer name",
+        name: "issuer_name",
+        value: card.issuer_name
+    }) }}
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+    <div style="height:100px">
+        <span style="width: 45%; float:left">
+        {{ forms.textField({
+        label: "Advertiser ID",
+        instructions: "Update the advertiser id",
+        name: "advertiser_id",
+        value: card.advertiser_id
+        }) }}
+        </span>
+        <span style="width:45%; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Advertiser Name",
+        instructions: "Update the advertiser name",
+        name: "advertiser_name",
+        value: card.advertiser_name
+        }) }}
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+    <div style="height:100px">
+        <span style="width: 45%; float:left">
+        {{ forms.textField({
+        label: "Product Type ID",
+        instructions: "Update the product type id",
+        name: "product_type_id",
+        value: card.product_type_id
+        }) }}
+        </span>
+        <span style="width:45%; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Network",
+        instructions: "Update the network",
+        name: "network",
+        value: card.network
+        }) }}
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+    <h2>Purchases Data</h2>
+    <div style="height:100px">
+        <span style="width: 30%; padding-right:10px; float:left">
+            {{ forms.textField({
+            label: "Regular APR Value",
+            instructions: "Update the regular apr value",
+            name: "purchases_reg_apr_value",
+            value: card.purchases_reg_apr_value
+            }) }}
+        </span>
+        <span style="width:30%; float:left">
+            {{ forms.textField({
+            label: "Regular APR Display",
+            instructions: "Update the regular apr display",
+            name: "purchases_reg_apr_display",
+            value: card.purchases_reg_apr_display
+            }) }}
+        </span>
+        <span style="width:30%; padding-left:10px; float:left">
+            {{ forms.textField({
+            label: "Regular APR Type",
+            instructions: "Update the regular apr type",
+            name: "purchases_reg_apr_type",
+            value: card.purchases_reg_apr_type
+            }) }}
+        </span>
+    </div>
+
+    <div style="height: 100px;">
+        <span style="width: 30%; padding-right:10px; float:left">
+            {{ forms.textField({
+            label: "Regular APR Min",
+            instructions: "Update the regular apr min",
+            name: "purchases_reg_apr_min",
+            value: card.purchases_reg_apr_min
+            }) }}
+        </span>
+        <span style="width: 30%; float:left">
+            {{ forms.textField({
+            label: "Regular APR Max",
+            instructions: "Update the regular apr max",
+            name: "purchases_reg_apr_max",
+            value: card.purchases_reg_apr_max
+            }) }}
+        </span>
+        <span style="width:30%; padding-left:10px; float:left">
+
+        </span>
+    </div>
+
+    <div style="height: 100px;">
+        <span style="width: 30%; padding-right:10px; float:left">
+            {{ forms.textField({
+            label: "Intro APR Value",
+            instructions: "Update the intro apr value",
+            name: "purchases_intro_apr_value",
+            value: card.purchases_intro_apr_value
+            }) }}
+        </span>
+        <span style="width: 30%; float:left">
+            {{ forms.textField({
+            label: "Intro APR Display",
+            instructions: "Update the intro apr display",
+            name: "purchases_intro_apr_display",
+            value: card.purchases_intro_apr_display
+            }) }}
+        </span>
+        <span style="width:30%; padding-left:10px; float:left">
+            {{ forms.textField({
+            label: "Intro APR Period Value",
+            instructions: "Update the intro apr period value",
+            name: "purchases_intro_apr_period_value",
+            value: card.purchases_intro_apr_period_value
+            }) }}
+        </span>
+    </div>
+
+
+    <div style="height: 100px;">
+        <span style="width: 30%; padding-right:10px; float:left">
+            {{ forms.textField({
+            label: "Intro APR Period Min",
+            instructions: "Update the intro apr period min",
+            name: "purchases_intro_apr_period_min",
+            value: card.purchases_intro_apr_period_min
+            }) }}
+        </span>
+        <span style="width: 30%; float:left">
+            {{ forms.textField({
+            label: "Intro APR Period Max",
+            instructions: "Update the intro apr period max",
+            name: "purchases_intro_apr_period_max",
+            value: card.purchases_intro_apr_period_max
+            }) }}
+        </span>
+        <span style="width: 30%; padding-left:10px; float:left">
+            {{ forms.textField({
+            label: "Intro APR Period End Date",
+            instructions: "Update the intro apr period end date",
+            name: "purchases_intro_apr_period_end_date",
+            value: card.purchases_intro_apr_period_end_date
+            }) }}
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+    <h2>Balance Transfer Data</h2>
+
+    <div style="height:100px">
+        <span style="width: 30%; padding-right:10px; float:left">
+        {{ forms.textField({
+        label: "Regular APR Value",
+        instructions: "Update the regular apr value",
+        name: "bt_reg_apr_value",
+        value: card.bt_reg_apr_value
+        }) }}
+        </span>
+        <span style="width:30%; float:left">
+        {{ forms.textField({
+        label: "Regular APR Display",
+        instructions: "Update the regular apr display",
+        name: "bt_reg_apr_display",
+        value: card.bt_reg_apr_display
+        }) }}
+        </span>
+        <span style="width:30%; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Intro APR Display",
+        instructions: "Update the intro apr display",
+        name: "bt_intro_apr_value",
+        value: card.bt_intro_apr_value
+        }) }}
+        </span>
+    </div>
+
+    <div style="height:100px">
+        <span style="width: 30%; padding-right:10px; float:left">
+        {{ forms.textField({
+        label: "Intro APR Display",
+        instructions: "Update the intro apr display",
+        name: "bt_intro_apr_display",
+        value: card.bt_intro_apr_display
+        }) }}
+        </span>
+        <span style="width:30%; float:left">
+        {{ forms.textField({
+        label: "Intro APR Display",
+        instructions: "Update the intro apr display",
+        name: "bt_intro_apr_display",
+        value: card.bt_intro_apr_display
+        }) }}
+        </span>
+        <span style="width:30%; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Intro APR Period Value",
+        instructions: "Update the intro apr period value",
+        name: "bt_intro_apr_period_value",
+        value: card.bt_intro_apr_period_value
+        }) }}
+        </span>
+    </div>
+
+    <div style="height:100px">
+        <span style="width: 30%; padding-right:10px; float:left">
+        {{ forms.textField({
+        label: "Intro APR Period Min",
+        instructions: "Update the intro apr period min",
+        name: "bt_intro_apr_period_min",
+        value: card.bt_intro_apr_period_min
+        }) }}
+        </span>
+        <span style="width:30%; float:left">
+        {{ forms.textField({
+        label: "Intro APR Period Max",
+        instructions: "Update the intro apr period Max",
+        name: "bt_intro_apr_period_max",
+        value: card.bt_intro_apr_period_max
+        }) }}
+        </span>
+
+        {% set bt_intro_apr_period_end_date = '' %}
+        {% if card['bt_intro_apr_period_end_date'] is defined %}
+        {% set bt_intro_apr_period_end_date = card.bt_intro_apr_period_end_date %}
+        {% endif %}
+
+        <span style="width:30%; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Intro APR Period End Date",
+        instructions: "Update the intro apr period end date",
+        name: "bt_intro_apr_period_end_date",
+        value: bt_intro_apr_period_end_date
+        }) }}
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+    <h2>Fees Data</h2>
+    <div style="height:100px">
+        <span style="width: 20%; float:left">
+        {{ forms.textField({
+        label: "Annual Fee Value",
+        instructions: "Update the annual fee value",
+        name: "annual_fee_value",
+        value: card.annual_fee_value
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Annual Fee Display",
+        instructions: "Update the annual fee display",
+        name: "annual_fee_display",
+        value: card.annual_fee_display
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "BT Annual Fee Value",
+        instructions: "Update the BT annual fee value",
+        name: "annual_fee_display",
+        value: ''
+        }) }}
+        </span>
+        <span style="width:20%; float:left">
+        {{ forms.textField({
+        label: "BT Annual Fee Display",
+        instructions: "Update the BT annual fee display",
+        name: "bt_annual_fee_display",
+        value: card.bt_annual_fee_display
+        }) }}
+        </span>
+    </div>
+
+    <div style="height:100px">
+        <span style="width: 20%; float:left">
+        {{ forms.textField({
+        label: "Activation Fee Value",
+        instructions: "Update the activation fee value",
+        name: "activation_fee_value",
+        value: card.activation_fee_value
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Activation Fee Display",
+        instructions: "Update the activation fee display",
+        name: "activation_fee_display",
+        value: card.activation_fee_display
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "ATM Fee Value",
+        instructions: "Update the ATM fee value",
+        name: "atm_fee_value",
+        value: card.atm_fee_value
+        }) }}
+        </span>
+        <span style="width:20%; float:left">
+        {{ forms.textField({
+        label: "ATM Fee Display",
+        instructions: "Update the ATM fee display",
+        name: "atm_fee_display",
+        value: card.atm_fee_display
+        }) }}
+        </span>
+    </div>
+
+    <div style="height:100px">
+        <span style="width: 20%; float:left">
+        {{ forms.textField({
+        label: "Pin Transaction Fee Value",
+        instructions: "Update the pin transaction fee value",
+        name: "pin_trans_fee_value",
+        value: card.pin_trans_fee_value
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Pin Transaction Fee Display",
+        instructions: "Update the pin transaction fee display",
+        name: "pin_trans_fee_display",
+        value: card.pin_trans_fee_display
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Signature Transaction Fee Value",
+        instructions: "Update the signature transaction fee value",
+        name: "signature_trans_fee_value",
+        value: card.signature_trans_fee_value
+        }) }}
+        </span>
+        <span style="width:20%; float:left">
+        {{ forms.textField({
+        label: "Signature Transaction Fee Display",
+        instructions: "Update the signature transaction fee display",
+        name: "signature_trans_fee_display",
+        value: card.signature_trans_fee_display
+        }) }}
+        </span>
+    </div>
+
+    <div style="height:100px">
+        <span style="width: 20%; float:left">
+        {{ forms.textField({
+        label: "Load Fee Value",
+        instructions: "Update the load fee value",
+        name: "load_fee_value",
+        value: card.load_fee_value
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Load Fee Display",
+        instructions: "Update the load fee display",
+        name: "load_fee_display",
+        value: card.load_fee_display
+        }) }}
+        </span>
+        <span style="width:20%; padding-right:10px; padding-left:10px; float:left">
+
+        </span>
+        <span style="width:20%; float:left">
+
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+
+    <div style="height:100px">
+        <span style="width: 45%; float:left">
+        {{ forms.textField({
+        label: "Credit Needed Value",
+        instructions: "Update the credit needed value",
+        name: "credit_needed_value",
+        value: card.credit_needed_value
+        }) }}
+        </span>
+        <span style="width:45%; padding-left:10px; float:left">
+        {{ forms.textField({
+        label: "Credit Needed Display",
+        instructions: "Update the credit needed display",
+        name: "credit_needed_display",
+        value: card.credit_needed_display
+        }) }}
+        </span>
+    </div>
+
+    <div style="clear:left"></div>
+
+    {% set review = '' %}
+    {% if card['review'] is defined %}
+    {% set review = card.review %}
+    {% endif %}
+
+    {{ forms.textAreaField({
+    label: "Review",
+    instructions: "Update the card review text",
+    rows: 10,
+    name: "review",
+    value: review,
+    class:"redactor-field"
+    }) }}
+
+    {% set review_link = '' %}
+    {% if card['review_link'] is defined %}
+    {% set review_link = card.review_link %}
+    {% endif %}
+
+    {{ forms.textField({
+    label: "Review Link",
+    instructions: "Update the link to the review",
+    name: "review_link",
+    value: review_link
+    }) }}
+
+    {% set review_overall_rating = '' %}
+    {% if card['review_overall_rating'] is defined %}
+    {% set review_overall_rating = card.review_overall_rating %}
+    {% endif %}
+
+
+    {{ forms.textField({
+    label: "Review Overall Rating",
+    instructions: "Update the review's overall rating",
+    name: "review_overall_rating",
+    value: review_overall_rating
+    }) }}
+
+    <input class="btn submit" type="submit" value="{{ 'Update' }}">
+</form>
+
+{% endset %}

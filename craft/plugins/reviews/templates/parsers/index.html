@@ -1,0 +1,69 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Reviews Issuers"|t %}
+
+{% set tabs = {
+dashboard:    { label: "Dashboard"|t, url: url('reviews/dashboard/index') },
+issuers: { label: "Issuers"|t, url: url('reviews/issuers/index') },
+maps: { label: "Maps"|t, url: url('reviews/maps/index') },
+parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
+} %}
+
+{% set selectedTab = 'parsers' %}
+
+{% set parsers = craft.reviews.getParsers(0, 10) %}
+
+{% set content %}
+
+<div id="newParserContainer" class="buttons">
+    <a href="{{ url('reviews/parsers/new') }}" class="btn submit add icon">{{ "New Parser"|t }}</a>
+</div>
+
+<div id="noParsers"{% if parsers %} class="hidden"{% endif %}>
+    <p>{{ "No Parsers exist yet."|t }}</p>
+</div>
+
+{% if parsers|length > 0 %}
+<table id="parsers" class="data fullwidth">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Columns</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for parser in parsers %}
+    <tr data-id="{{ parser.id }}" data-name="{{ parser.name|t }}">
+        <td data-title="{{ 'ID' }}">{{ parser.id }}</td>
+        <td scope="row" data-title="{{ 'Name' }}">{{ parser.name }}</td>
+        <td scope="row" data-title="{{ 'Description' }}">{{ parser.description }}</td>
+        <td data-title="{{ 'Columns' }}">{{ parser.columns }}</td>
+        <td data-title="{{ 'Status' }}">{{ parser.active == 1 ? 'Active' : 'Inactive' }}</td>
+        <td>
+            <a href="{{ url('reviews/parsers/edit', { id: parser.id }) }}" class="edit icon"></a>
+            &nbsp;&nbsp;
+            <a class="delete icon" title="{{ 'Delete'|t }}" role="button"></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+{% endif %}
+{% endset %}
+
+{% set js %}
+var adminTable = new Craft.AdminTable({
+tableSelector: '#parsers',
+noObjectsSelector: '#noParsers',
+newObjectBtnSelector: '#newParserContainer',
+deleteAction: 'reviews/parser/delete',
+confirmDeleteMessage: '{{ "Are you sure you want to delete “{name}”?"|t }}'
+});
+{% endset %}
+{% includeJs js %}

@@ -1,0 +1,236 @@
+{#
+# Top Credit Cards Page template
+# ---------------
+#
+# When this template gets loaded, it will be because someone has accessed
+# http://yoursite.com/ (without any URI). Craft checks to see if you have
+# a Single section set to be the Homepage (as you do, by default), and
+# loads the section’s Template (this file). A special ‘entry’ variable
+# will already be set for you, assigned to the Homepage entry.
+#
+# It's worth noting that even if you didn't have a Homepage Single section,
+# as long as this template remains at craft/templates/index.html, it
+# would still be the one to get loaded when accessing http://yoursite.com/,
+# albeit without an ‘entry’ variable already set for you.
+#
+# See this page for more details on how Craft routes requests:
+# http://craftcms.com/docs/routing
+#}
+
+{% extends "layouts/_site" %}
+
+{% includeCssFile '/assets/css/cc-card-category.css' %}
+
+{% includeJsFile '/assets/js/category-page.js' %}
+
+{% set title = entry.title %}
+
+{% block content %}
+
+<div class="card-category-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-18">
+                <div class="row">
+                    <div class="col-md-24">
+
+                        <div class="card-category-top">
+                            <div class="category-description-block">
+                                <h1>10 Best Credit Cards for {{ now|date("F Y") }} from Our Partners</h1>
+                                <p class="category-description">Below is a list of this month's top 10 featured credit card offers. To see more offers from a category, simply follow the link. Finding a great credit card deal is as easy as 1,2,3...</p>
+                                <p class="category-description-mobile">See offers from our partners below.</p>
+                            </div>
+                        </div>
+                        <div class="card-category-disclosure-hldr"><a href="#" data-toggle="modal" data-target="#myModalDisclosure"><img  class="pull-right" src="/assets/images/advertiser_dis_text.png" /></a>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        {% for block in entry.topCreditCards %}
+
+                        <!--CARD LISTING TEMPLATE-->
+                        <div class="row ">
+                            <div class="col-sm-24 col-md-18 col-lg-18" style="margin-bottom: 5px">
+                                <h2  style="font-weight:bold;">{{ block.categoryTitle }}</h2>
+                                {% set catId = block.category.first().categoryId %}
+                                {% set cards = craft.products.getCardsByCategoryId(catId, 1) %}
+                                {% set card = cards[0] %}
+                                <a href="{{ block.category.first().uri }}">See more cards in this category</a>
+                            </div>
+                        </div>
+
+                        <div class="res-schumer-box ">
+                            <div class="row">
+                                <div class="col-sm-24 col-md-18 col-lg-18">
+
+                                    <div class='res-offer-left'>
+
+                                        <a href="credit-cards/{{ card.slug }}?catid=37">
+                                            {{ card.name | raw }}</a>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-24 col-sm-24 col-md-9 col-lg-7">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-8 col-md-24 col-lg-24">
+                                                    <div class="res-cc-card-art-align">
+                                                        <a href='/oc/?pid={{ card.card_id }}&pg=37&pgpos={{ loop.index }}' target='_blank'>                                        <img
+                                                                src="http://www.imgsynergy.com/191x120/{{ card.image }}"
+                                                                border="0" class="img-responsive"
+                                                                alt="{{ card.name | raw }} Application">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="mobile-hide">
+                                                    </div><!--mobile-hide-->
+                                                </div>
+                                                <div class="col-xs-12 col-sm-16 col-md-24 col-lg-24">
+                                                    <div class="res-field-apply-now-768">
+                                                        <a class="btn btn-apply btn-lg btn-block" href="/oc/?pid={{ card.card_id }}&pg=37&pgpos={{ loop.index }}" target="_blank" name="&lid=chase-sapphire-preferred-card-221210070">
+                                                            <i class="fa fa-lock fa-lg"></i> &nbsp;
+                                                            APPLY ONLINE
+                                                        </a>
+                                                        <br>
+                                                        <!--Only show the apply by phone number button if card has a phone number-->
+                                                        <p class="issuer">at Chase&#39;s <br/>secure site</p>
+                                                        <div class="credit-needed-hldr">Credit Needed <span style="color:#16487b  ; font-weight:bold;"><br />{{ card.credit_needed_display }}</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-24 col-sm-24 col-md-15 col-lg-17">
+                                            <div class="res-details">
+                                                {{ card.bullets | raw }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-24 col-md-6 col-lg-6 apply-now-btn-padding">
+                                    <div class="res-field-apply-now">
+                                        <a class="btn btn-apply btn-lg"
+                                           href="/oc/?pid={{ card.card_id }}&pg=37&pgpos={{ loop.index }}"
+                                           target="_blank" name="&lid={{ card.slug }}-{{ card.card_id }}">
+                                            <i class="fa fa-lock fa-lg"></i>
+                                            &nbsp;APPLY NOW
+                                        </a>
+                                        <br>
+                                        <p>at {{ card.issuer_name }}&#39;s <br/>
+                                            secure site</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-24 col-md-24 col-lg-24">
+                                    <div class="res-card-data-hldr">
+                                        <ul class="responsive-table-all">
+                                            <li class="first-row">
+                                                <dl>
+                                                    <dt>Purchases Intro APR</dt>
+                                                    <dd>{{ card.purchases_intro_apr_display }}</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>Balance Transfers Intro APR</dt>
+                                                    <dd>{{ card.bt_intro_apr_display }}</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>Regular
+                                                        APR
+                                                    </dt>
+                                                    <dd>{{ card.purchases_reg_apr_display }}</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>Annual
+                                                        Fee
+                                                    </dt>
+                                                    <dd>{{ card.annual_fee_display }}</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>
+                                                        Credit Needed
+                                                    </dt>
+                                                    <dd>{{ card.credit_needed_display }}</dd>
+                                                </dl>
+                                                <div style="clear:both;"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="see-terms-schumer-mobile "><a href="/oc/?pid={{ card.card_id }}&pg=37&pgpos={{ loop.index }}" target="_blank">See Terms*</a></div>
+                        <!--see terms-->
+
+                        {% endfor %}
+
+                        <div class="card-category-disclosure-hldr-bottom">
+                            <a href="#" data-toggle="modal" data-target="#myModalDisclosure">
+                                <img class="pull-right" src="/assets/images/advertiser_dis_text.png" />
+                            </a>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="category-rightgutter-hldr" id="right-gutter">
+
+                    {% for block in entry.rightGutter %}
+                    <div class="panel panel-grey">
+                        <div class="panel-heading">{{ block.blockTitle }}</div>
+
+                        <div class="panel-body">
+                            {% for item in block.blockContents %}
+                            <div class="list-group">
+
+                                {% set class = 'list-group-item-greyicn' %}
+                                {% if item.icon == '' %}
+                                {% set class = 'list-group-item-grey' %}
+                                {% endif %}
+
+                                <a class="list-group-item {{ class }}" href="{{ item.link }}">
+
+                                    {% if item.icon != '' or item.image != '' %}
+                                    {% if item.image != '' %}
+                                    <span class="gutter-icon-hldr-greyicn-img pull-left">
+                                        <img src="/assets/images/category/{{ item.icon }}">
+                                    </span>
+                                    {% else %}
+                                    <span class="gutter-icon-hldr-grey pull-left">{{ item.icon | raw }}</span>
+                                    {% endif %}
+                                    {% endif %}
+
+                                    <div class="list-group-item-heading">{{ item.title }}</div>
+
+                                    <p class="list-group-item-text">{{ item.content }}</p>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="back-to-top-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-24">
+                <a style="display: block;" href="#Page-Top" class="back-to-top"><i class="fa fa-chevron-up"></i><br><br>BACK<br>TO TOP</a>
+            </div>
+            <div class="col-md-24 see-terms-footer">
+                See the online credit card specials applications for details about terms and conditions of offer. Reasonable efforts are made to maintain accurate information. However all credit card information is presented without warranty. When you click on the " Apply Now " button you can review the credit card terms and conditions on the credit card issuer's web site.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-24 see-terms-footer-mobile"> * For additional rates, fees and costs see issuer's website for detailed pricing and terms. </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

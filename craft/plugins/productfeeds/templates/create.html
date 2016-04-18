@@ -1,0 +1,51 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Feeds" %}
+
+{% set tabs = {
+Feeds: { label: "Feeds", url: actionUrl('productFeeds_Feed/index') },
+Create:    { label: "Create Feed", url: actionUrl('productFeeds_Feed/create') }
+} %}
+
+{% set selectedTab = 'Create' %}
+
+{% set content %}
+
+{% import "_includes/forms" as forms %}
+
+<form method="POST" action="" accept-charset="UTF-8">
+    <input type="hidden" name="action" value="/action/productFeeds_Feed/store">
+    <input type="hidden" name="redirect" value="productFeeds/index">
+
+{{ forms.lightswitchField({
+on: true,
+label: "Status",
+instructions: "Toggle feed active or inactive",
+name: "status"
+}) }}
+
+
+{{ forms.textField({
+label: "Name",
+instructions: "Add the name of the feed.",
+name: "name"
+}) }}
+
+
+{{ forms.textField({
+label: "URL",
+instructions: "Add the feed url",
+name: "url"
+}) }}
+
+
+{{ forms.textField({
+label: "Key",
+instructions: "Add the feed key",
+name: "key"
+}) }}
+
+<input class="btn submit" type="submit" value="{{ 'Create' }}">
+</form>
+
+{% endset %}

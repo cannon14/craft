@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-sm-24 col-md-24 col-lg-24">
+        <h2 id="staff_review" class="review_header">{{ card.issuer_name | raw }} - Staff Review</h2>
+    </div><!--column-->
+</div><!--row-->
+
+{% if card.review_overall_rating is defined and card.review_overall_rating != '0.00' %}
+<div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4 text-center" style="border:thin solid #999999; padding:10px">
+        <p>
+            <strong>Editor's Rating:</strong>
+        </p>
+        <div class="pd-star-rating">
+            <input type="number" value="{{ card.review_overall_rating }}" data-size="xs" data-show-caption="false" class="category-star-rating rating form-control">
+        </div>
+        <p>
+            <strong>{{ card.review_overall_rating | trim('0') }} out of 5</strong>
+        </p>
+    </div><!--column-->
+        <div class="col-sm-12 col-md-12 col-lg-12" style="border:thin solid #999999; padding:10px">
+            {{ card.review | raw }}
+                <a href="{{ card.review_link }}?catid={{ craft.request.getParam('catId') }}" class="review-link">Read full review</a>
+        </div>
+</div><!--row-->
+{% else %}
+<div class="row">
+    <div class="col-sm-24 col-md-24 col-lg-24">
+        {{ card.review | raw }}
+    </div>
+</div><!--row-->
+{% endif %}
+
+<div class="row apply-online-row">
+    <div class="col-sm-5 col-md-5 col-lg-5">
+        <div class="res-field-apply-now apply-now-below-staff-review">
+            <a name="&lid={{ card.slug }}" target="_blank" href="{{ card.link_url }}&catid={{categoryId}}" class="btn btn-apply btn-lg">
+                <i class="fa fa-lock fa-lg"></i> &nbsp;APPLY ONLINE
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-24 col-md-24 col-lg-24">
+        <p>Apply for the {{ card.issuer_name | raw }} Credit Card from our partner by filling out a secure online application.</p>
+    </div><!--column-->
+</div><!--row-->
+
+<div class="row">
+    <div class="col-sm-24 col-md-24 col-lg-24">
+        <div class="review-disclaimer">
+            <p>All reviews are prepared by CreditCards.com staff. Opinions expressed therein are solely
+                those of the reviewer. The information, including card rates and fees, presented in the review is
+                accurate as of the date of the review.</p>
+        </div>
+    </div><!--column-->
+</div><!--row-->

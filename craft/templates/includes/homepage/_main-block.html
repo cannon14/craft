@@ -1,0 +1,158 @@
+<!-- Site Main Content Block-->
+<div class="maincontent-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Credit Card Search Categories</h3>
+                {% set counter = 0 %}
+                {% for block in entry.homepageCreditcardSearchCategories %}
+
+                    {% if counter == 0 %}
+                        <div class="row">
+                    {% endif %}
+
+                        <div class="col-xs-24 col-sm-8 col-md-8">
+                            <div class="panel panel-simple">
+                                <div class="panel-heading"><span style="color:#156abd;">{{ block.categoryIcon | raw }}</span></span>
+                                    {{ block.categoryTitle | raw }}
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        {% for item in block.categoryList %}
+                                        <li><a href="{{ item.categoryUrl }}">{{ item.categoryName | raw }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% set counter = counter + 1 %}
+                    {% if counter == 3 %}
+                        </div><!--row-->
+                        {% set counter = 0 %}
+                    {% endif %}
+
+                {% endfor %}
+            </div><!--col-md-12-->
+            <div class="col-md-12">
+            <h3>Latest Credit Card News</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="latest-news-hldr">
+
+                        <div class="storyhome-hldr">
+                            <div class="storyhome-content">
+                                <h3>
+                                    <a href="http://www.creditcards.com/credit-card-news/merchants-add-card-surcharges.php">Surcharges hit credit card users at the register</a>
+                                </h3>
+                                <p>Fees for paying with credit cards may be on the rise  ... See <a href="http://www.creditcards.com/credit-card-news/merchants-add-card-surcharges.php">Surcharges</a></p>
+                            </div>
+                            <a href="http://www.creditcards.com/credit-card-news/merchants-add-card-surcharges.php"><img class="latesthome-img" src="/assets/images/surcharges-fees-rewards-thumb.jpg" alt="Surcharges" width="56" height="69"></a>
+                            <div style="clear:both;"></div>
+                        </div>
+
+                        <div class="storyhome-hldr">
+                            <div class="storyhome-content">
+                                <h3>
+                                    <a href="http://www.creditcards.com/credit-card-news/call-card-customer-service.php">When you should call your card's customer service</a>
+                                </h3>
+                                <p>Confused about terms or have a problem? Just call ... See <a href="http://www.creditcards.com/credit-card-news/call-card-customer-service.php">Phone </a></p>
+                            </div>
+                            <a href="http://www.creditcards.com/credit-card-news/call-card-customer-service.php"><img class="latesthome-img" src="/assets/images/calling-customer-service-thumb.jpg" alt="5 times to call your card's customer service" width="56" height="69"></a>
+                            <div style="clear:both;"></div>
+                        </div>
+
+                        <div class="storyhome-hldr">
+                            <div class="storyhome-content">
+                                <h3>
+                                    <a href="http://www.creditcards.com/credit-card-news/ex-ruin-credit-breakup-divorce.php">5 ways your ex <br>can ruin your credit</a>
+                                </h3>
+                                <p>How to minimize credit score damage of a soon-to-be ex ... See <a href="http://www.creditcards.com/credit-card-news/ex-ruin-credit-breakup-divorce.php">Divorce</a></p>
+                            </div>
+                            <a href="http://www.creditcards.com/credit-card-news/ex-ruin-credit-breakup-divorce.php"><img class="latesthome-img" src="/assets/images/divorce-reveng-spending-thumb.jpg" alt="5 ways your ex can ruin your credit" width="56" height="69"></a>
+                            <div style="clear:both;"></div>
+                        </div>
+
+                        <div class="storyhome-hldr">
+                            <div class="storyhome-content">
+                                <h3>
+                                    <a href="http://www.creditcards.com/credit-card-news/pay-owe-old-debt-collections.php">Don't rush to pay very old debt in collections</a>
+                                </h3>
+                                <p>Debt likely has turned uncollectible after eight years  ... See <a href="http://www.creditcards.com/credit-card-news/pay-owe-old-debt-collections.php">Old debt</a></p>
+                            </div>
+                            <a href="http://www.creditcards.com/credit-card-news/pay-owe-old-debt-collections.php"><img class="latesthome-img" src="/assets/images/susan-keating-thumb.jpg" alt="Credit Smart columnist Susan C. Keating" width="56" height="69"></a>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="storyhome-hldr">
+                            <div class="storyhome-content">
+                                <h3><a href="http://blogs.creditcards.com/">Taking Charge:<br>
+                                    A credit card blog</a></h3><a href="http://blogs.creditcards.com/"> </a>
+                                <p><a href="http://blogs.creditcards.com/2016/03/cardholders-have-sympathy-for-surcharges.php">Cardholder surcharge sympathy</a></p>
+                                <p><a href="http://blogs.creditcards.com/2016/03/fraudsters-dictionary-names-the-latest-cyberscams.php">Brush up on your fraud cyberspeak</a></p>
+
+                            </div>
+                            <a href="http://blogs.creditcards.com/2016/03/cardholders-have-sympathy-for-surcharges.php"> <img src="/assets/images/sympathy-surcharges-thumb.jpg" class="latesthome-img" width="56" height="69"></a>
+                            <div style="clear:both;"></div></div>                        </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="rate-report-hldr">
+                        <div class="rate-title"><a href="http://www.creditcards.com/rate-report">Credit Card Rate Report</a></div>
+                        <div class="rate-updated-date">Updated:
+                            03-19-2016                            </div>
+
+                        <!--Hide this div by default so if it fails it won't blink into existence then implode-->
+                        <div id="rateChartArticleBox" style="">
+                            <table class="table table-striped" border="0" cellpadding="0" cellspacing="0">
+                                <tbody><tr>
+                                    <td><a href="http://www.creditcards.com/weekly-rate-report.php">National Average</a></td>
+                                    <td>15.16%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/low-interest.php">Low Interest</a></td>
+                                    <td>11.96%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/business.php">Business</a></td>
+                                    <td>13.12%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/college-students.php">Student</a></td>
+                                    <td>13.42%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/balance-transfer.php">Balance Transfer</a></td>
+                                    <td>14.36%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/airline-miles.php">Airline</a></td>
+                                    <td>15.17%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/cash-back.php">Cash Back</a></td>
+                                    <td>15.21%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/reward.php">Reward</a></td>
+                                    <td>15.26%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/instant-approval.php">Instant Approval</a></td>
+                                    <td>18.04%</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://www.creditcards.com/bad-credit.php">Bad Credit</a></td>
+                                    <td>22.56%</td>
+                                </tr>
+
+                                </tbody></table></div>
+                        <!--rateChartArticleBox-->
+                    </div>
+                    <!--rate-report-hldr-->
+                </div>
+                <!--col-md-12-->
+            </div><!--row-->
+            </div><!--col-md-12-->
+        </div>
+    </div>
+</div>
+<!-- main-block -->

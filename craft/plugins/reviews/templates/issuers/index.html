@@ -1,0 +1,66 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Reviews Issuers"|t %}
+
+{% set tabs = {
+dashboard:    { label: "Dashboard"|t, url: url('reviews/dashboard/index') },
+issuers: { label: "Issuers"|t, url: url('reviews/issuers/index') },
+maps: { label: "Maps"|t, url: url('reviews/maps/index') },
+parsers: { label: "Parsers"|t, url: url('reviews/parsers/index') }
+} %}
+
+{% set selectedTab = 'issuers' %}
+
+{% set issuers = craft.reviews.getIssuers(0, 10) %}
+
+{% set content %}
+
+<div id="newIssuerContainer" class="buttons">
+    <a href="{{ url('reviews/issuers/new') }}" class="btn submit add icon">{{ "New Issuer"|t }}</a>
+</div>
+
+<div id="noissuers"{% if issuers %} class="hidden"{% endif %}>
+    <p>{{ "No Issuers exist yet."|t }}</p>
+</div>
+
+{% if issuers|length > 0 %}
+<table id="issuers" class="data fullwidth">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for issuer in issuers %}
+        <tr data-id="{{ issuer.id }}" data-name="{{ issuer.name|t }}">
+                <td data-title="{{ 'ID'|t }}">{{ issuer.id }}</td>
+                <td scope="row" data-title="{{ 'Name'|t }}">{{ issuer.name|e }}</td>
+                <td data-title="{{ 'Status'|t }}">{{ issuer.active == 1 ? 'Active' : 'Inactive' }}</td>
+                <td data-title="{{ 'Actions'|t }}">
+                    <a href="{{ url('reviews/issuers/edit', { id: issuer.id }) }}" class="edit icon"></a>
+                    &nbsp;&nbsp;
+                    <a class="delete icon" title="{{ 'Delete'|t }}" role="button"></a>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+
+</table>
+{% endif %}
+{% endset %}
+
+{% set js %}
+var adminTable = new Craft.AdminTable({
+tableSelector: '#issuers',
+noObjectsSelector: '#noIssuers',
+newObjectBtnSelector: '#newIssuerContainer',
+deleteAction: 'reviews/issuer/delete',
+confirmDeleteMessage: '{{ "Are you sure you want to delete “{name}”?"|t }}'
+});
+{% endset %}
+{% includeJs js %}

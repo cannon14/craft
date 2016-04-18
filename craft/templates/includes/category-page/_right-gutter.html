@@ -1,0 +1,38 @@
+<div class="category-rightgutter-hldr" id="right-gutter">
+
+    {% for block in category.rightGutter %}
+        <div class="panel panel-grey">
+            <div class="panel-heading">{{ block.blockTitle }}</div>
+
+            <div class="panel-body">
+                {% for item in block.blockContents %}
+                <div class="list-group">
+
+                    {% set class = 'list-group-item-greyicn' %}
+                    {% if item.icon == '' %}
+                    {% set class = 'list-group-item-grey' %}
+                    {% endif %}
+
+                    <a class="list-group-item {{ class }}" href="{{ item.link }}">
+
+                        {% if item.icon != '' or item.image != '' %}
+                            {% if item.image != '' %}
+                                <span class="gutter-icon-hldr-greyicn-img pull-left">
+                                    <img src="/assets/images/category/{{ item.icon }}">
+                                </span>
+                            {% else %}
+                                <span class="gutter-icon-hldr-grey pull-left">{{ item.icon | raw }}</span>
+                            {% endif %}
+                        {% endif %}
+
+                        <div class="list-group-item-heading">{{ item.title }}</div>
+
+                        <p class="list-group-item-text">{{ item.content }}</p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+</div>

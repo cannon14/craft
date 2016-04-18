@@ -1,0 +1,19 @@
+<div class="back-to-top-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-24">
+                <a style="display: block;" href="#Page-Top" class="back-to-top"><i class="fa fa-chevron-up"></i><br><br>BACK<br>TO TOP</a>
+            </div>
+            <div class="col-md-24 see-terms-footer">
+                {% if category.seeTermsFooter == '' %}
+                See the online {{ category.title  | lower | trim('s') }} applications for details about terms and conditions of offer. Reasonable efforts are made to maintain accurate information. However all credit card information is presented without warranty. When you click on the " Apply Now" button you can review the credit card terms and conditions on the issuer's web site.
+                {% else %}
+                {{ category.seeTermsFooter }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-24 see-terms-footer-mobile"> * For additional rates, fees and costs see issuer's website for detailed pricing and terms. </div>
+        </div>
+    </div>
+</div>

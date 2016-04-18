@@ -1,0 +1,128 @@
+{#
+# Product Detail Page template
+# ---------------
+#
+# When this template gets loaded, it will be because someone has accessed
+# http://yoursite.com/ (without any URI). Craft checks to see if you have
+# a Single section set to be the Homepage (as you do, by default), and
+# loads the section’s Template (this file). A special ‘entry’ variable
+# will already be set for you, assigned to the Homepage entry.
+#
+# It's worth noting that even if you didn't have a Homepage Single section,
+# as long as this template remains at craft/templates/index.html, it
+# would still be the one to get loaded when accessing http://yoursite.com/,
+# albeit without an ‘entry’ variable already set for you.
+#
+# See this page for more details on how Craft routes requests:
+# http://craftcms.com/docs/routing
+#}
+
+{% extends "layouts/_site" %}
+
+{% set title = card.name | raw %}
+
+{% includeCssFile "/assets/css/cc-card-category.css" %}
+{% includeCssFile "/assets/css/reviews.css" %}
+
+{% includeJsFile "/assets/vendor/star-rating.js" %}
+
+{% block content %}
+
+<div class="card-category-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-24">
+                <div class="other-subnav-hldr">
+                    <ol class="breadcrumb-other">
+                        <li><a href="/">Credit Cards </a> <i class="fa fa-angle-right"></i></li>
+                        <li><a href="/{{ '#' }}">{{ card.issuer_name | raw }}</a><i class="fa fa-angle-right"></i></li>
+                        <li class="active">{{ card.name | raw }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-24">
+                <div class="card-category-disclosure-hldr-pdp">
+                    <a data-target="#myModalDisclosure" data-toggle="modal" href="#"><img src="/assets/images/advertiser_dis_text.png" class="pull-right"></a>
+
+                    <div class="clearfix"></div>
+                </div>
+                <!--card-category-disclosure-hldr-->
+
+                {% include 'includes/product-detail-page/_schumer-box' %}
+
+                <br>
+
+                {% if card.terms is defined %}
+                <div style="margin-top: 15px;" class="see-terms-schumer-desktop ">
+                    <a target="_blank" href="https://consumer.bankofamerica.com/USCCapp/Ctl/entry?sc=VACJCP&amp;pid=dppf">See Rates &amp; Fees</a>
+                </div>
+
+                <div class="see-terms-schumer-mobile ">
+                    <a target="_blank" href="https://consumer.bankofamerica.com/USCCapp/Ctl/entry?sc=VACJCP&amp;pid=dppf">See Rates &amp; Fees</a>
+                </div>
+                <!--see terms-->
+                {% endif %}
+
+                {% if card['review'] is defined %}
+                {% include 'includes/product-detail-page/_staff-review' %}
+                {% endif %}
+
+                <hr>
+
+                {% include 'includes/product-detail-page/_quick-links' %}
+
+                <br>
+                <!--Anchor has to be above the USER REVIEWS title to compensate for navbar coverage-->
+                <span id="user_reviews_anchor"></span>
+
+                <div class="row">
+                    <div class="col-sm-24 col-md-24 col-lg-24">
+                        <div class="complaint_text">
+                            <p>Report a complaint - <a target="_blank" href="http://www.consumerfinance.gov/complaint/">Consumer Financial Protection Bureau</a></p>
+                        </div>
+                    </div><!--column-->
+                </div><!--row-->
+
+                <div class="mobile-hide">
+
+                    <hr>
+
+                    <!--BEGIN REVIEW STATS-->
+
+
+                </div>
+                <!--mobile-hide-->
+            </div>
+
+        </div>
+        <!--col-md-24-->
+    </div>
+    <!--row-->
+</div>
+
+<div class="back-to-top-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-24">
+                <a style="display:none;" href="#Page-Top" class="back-to-top"><i class="fa fa-chevron-up"></i><br><br>BACK<br>TO TOP</a>
+            </div>
+            <div class="col-md-24 see-terms-footer">
+                <div class="credit-card-details">
+                    See the online {{ card.name | raw }} application for details about terms and conditions of offer.
+                    Reasonable efforts are made to maintain accurate information. However all credit card information is presented
+                    without warranty. When you click on the " Apply Now " button you can review the credit card terms and
+                    conditions on the credit card issuer's web site.
+                </div>
+
+            </div>
+
+            <div class="col-md-24 see-terms-footer-mobile"> * For additional rates, fees and costs see issuer's website for detailed pricing and terms. </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

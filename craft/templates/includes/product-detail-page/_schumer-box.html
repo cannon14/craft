@@ -1,0 +1,109 @@
+<div class="res-schumer-box-pd">
+    <div class="row">
+        <div class="col-sm-18 col-md-19 col-lg-19">
+            <div class="res-offer-left">
+                <h1>{{ card.name | raw }}</h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-24 col-sm-8 col-md-7 col-lg-6">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-24 col-md-24 col-lg-24">
+                            <div class="res-cc-card-art-align">
+                                <a name="{{ card.name }}" target="_blank" href="{{ card.link_url }}&catid={{ categoryId }}">
+                                    <img border="0" alt="{{ card.name}} Application" class="img-responsive" src="http://www.imgsynergy.com/191x120/{{ card.image }}">
+                                </a>
+                            </div>
+                            <div class="mobile-hide">
+                                <div class="pd-star-rating">
+                                    <input type="number" value="{{ 4 }}" data-size="xs" data-show-caption="false" class="category-star-rating rating form-control" style="display: none;">
+                                    <div class="category-total-reviews">
+                                        <a href="#user_reviews_anchor">{{ 0 }} customer reviews</a>
+                                    </div>
+                                </div>
+                            </div><!--mobile-hide-->
+                        </div>
+                        <div class="col-xs-12 col-sm-24 col-md-24 col-lg-24">
+                            <div class="res-field-apply-now-768">
+                                <a name="&lid=" target="_blank" href="{{ card.link_url }}&catid={{ categoryId }}" class="btn btn-apply btn-lg btn-block">
+                                    <i class="fa fa-lock fa-lg"></i> APPLY ONLINE
+                                </a>
+                                <br>
+                                <br>
+                                <a onclick="var s=s_gi('ccardsccdc-us'); s.linkTrackVars='eVar25,eVar1,products,events'; s.linktrackevents='event4'; s.events='event4'; s.eVar25='12'; s.eVar1='2064'; s.products='12;220610109;0;0'; s.tl(this,'o','Apply by Phone');" href="tel:877-827-8836" class="btn btn-primary btn-lg btn-block">
+                                    <i class="fa fa-phone fa-lg"></i> &nbsp;APPLY BY PHONE
+                                </a>
+                                <div class="credit-needed-hldr">Credit Needed <span style="color:#16487b  ; font-weight:bold;"><br>{{ card.credit_needed_display }}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--row-->
+                </div>
+                <!--col-xs-24 col-sm-8 col-md-7 col-lg-6-->
+                <div class="col-xs-24 col-sm-14 col-md-17 col-lg-18">
+                    <div class="res-details">
+                        {{ card.bullets | raw }}
+                    </div>
+                    <!--res-details-->
+                </div>
+                <!--col-xs-24 col-sm-14 col-md-17 col-lg-18-->
+            </div>
+            <!--row-->
+        </div>
+        <!--col-sm-18 col-md-19 col-lg-19-->
+        <div class="col-sm-6 col-md-5 col-lg-5 apply-now-btn-padding">
+            <div class="res-field-apply-now">
+                <a name="&lid={{ card.slug }}" target="_blank" href="{{ card.link_url }}&catid={{categoryId}}" class="btn btn-apply btn-lg">
+                    <i class="fa fa-lock fa-lg"></i> APPLY NOW
+                </a>
+                <br>
+                <p>at {{ card.issuer_name | raw }}'s <br>
+                    secure site</p>
+                <p class="apply-call">
+                    <span>or call {{ card.issuer_name | raw }} at <br><b>{{ '1-800-###-####' }}</b></span>
+                </p>
+                <br>
+            </div>
+        </div>
+        <!--col-sm-6 col-md-5 col-lg-5 apply-now-btn-padding-->
+    </div>
+    <!--row-->
+    <div class="row">
+        <div class="col-sm-24 col-md-24 col-lg-24">
+            <div class="res-card-data-hldr">
+                <ul class="responsive-table-all">
+                    <li class="first-row">
+                        <dl>
+                            <dt>Purchases Intro APR</dt>
+                            <dd>{{ card.purchases_intro_apr_display }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Balance Transfers Intro APR</dt>
+                            <dd>{{ card.bt_intro_apr_display }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Regular
+                                APR
+                            </dt>
+                            <dd>{{ card.purchases_reg_apr_display }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Annual
+                                Fee
+                            </dt>
+                            <dd>{{ card.annual_fee_display }}</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                Credit Needed
+                            </dt>
+                            <dd>{{ card.credit_needed_display }}</dd>
+                        </dl>
+                        <div style="clear:both;"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--row-->
+</div>
+<!--res-schumer-box-pd-->

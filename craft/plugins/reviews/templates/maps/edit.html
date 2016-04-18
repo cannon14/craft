@@ -1,0 +1,44 @@
+{% extends "_layouts/cp" %}
+
+{% import "_includes/forms" as forms %}
+
+{% set title = title %}
+
+{% set content %}
+
+<form method="POST" action="{{ url('reviews/maps/save') }}" accept-charset="UTF-8">
+    <input type="hidden" name="redirect" value="reviews/maps">
+    <input type="hidden" name="id" value="{{map.id}}">
+
+    {{ forms.lightswitchField({
+    label: "Status",
+    instructions: "Toggle map active or inactive",
+    name: "active",
+    on: map.active,
+    }) }}
+
+    {{ forms.textField({
+    label: "Map Name",
+    instructions: "Enter Map Name",
+    name: "name",
+    value: map.name
+    }) }}
+
+    {{ forms.textField({
+    label: "Card ID",
+    instructions: "Enter Card ID",
+    name: "card_id",
+    value: map.card_id
+    }) }}
+
+    {{ forms.textField({
+    label: "Enter Alternate ID",
+    instructions: "Enter Alternate ID to Associated with Card ID",
+    name: "alt_id",
+    value: map.alt_id
+    }) }}
+
+    <input class="btn submit" type="submit" value="{{ 'Save' }}">
+</form>
+
+{% endset %}

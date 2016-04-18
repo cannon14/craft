@@ -1,0 +1,29 @@
+.chef
+.chef/*.pem
+.chef/encrypted_data_bag_secret
+.chef/*
+.idea/
+.DS_Store
+.rake_test_cache
+.project
+*~
+Berksfile.lock
+Gemfile.lock
+
+.vagrant
+
+# Bundler
+bin/*
+.bundle/*
+
+.kitchen/
+.kitchen.local.yml
+
+# chef
+
+.chef/*
+.vscode
+Vagrantfile
+*.sql
+
+.swp

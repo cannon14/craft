@@ -1,0 +1,13 @@
+{
+    "id": "davidcannon",
+    "nagios": {
+      "email": "david.cannon@creditcards.com"
+    },
+    "shell": "/bin/bash",
+    "groups": [
+      "sysadmin",
+      "adm"
+    ],
+    "password": "$1$Ch2Nj.bq$3rbIth/MhVzPepPjJyrvk0",
+    "ssh_keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJNMxBnSKPkrYIDTnMN4QG0JaiI+/4hw2DOlQFdau/Ok6MLYxPIOsYfDa1Mt8pv/ryPl3Dkw2Gy6FdxUCzT6pg+PruzimGOMrUIGRkmnfr8URw1VoZ9roNOHTLSqrCOA30SOvucGeOi04jIy+Dko1cE0y+yyraWDnZ7KLLyTxbCQop9IUcJTGWg2/XkgzM7gzftMfKjZOhX/3eJBNstPbmesQvndhh0kRn+1OtF9MpZFkdCAfeNwKIdQYuhDupuMXIszfu117IUFPdkKosJnAQBhT9C27miUbtulDQ3PDvq6Tf6QrdqdpEbmFOgSvSIRHaFm7QjAgyHvb4kOlYMHPT tyler@tkDesktopUB"]
+}

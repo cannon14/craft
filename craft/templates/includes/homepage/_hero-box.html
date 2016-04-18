@@ -1,0 +1,46 @@
+<!-- Site Banner Block-->
+{% set heroImage = entry.homepageHeroImage.first() %}
+
+<style>
+    .banner-block {
+        background-image: url({{ heroImage.url }});
+    }
+</style>
+
+<div class="banner-block">
+    <div class="item">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="top-banner-text">{{ entry.mainTitle }}</div>
+
+                    <h1>{{ entry.subTitle }}</h1>
+
+                    <div class="advertiser-disclosure">
+                        <a href="#" data-toggle="modal" data-target="#myModalDisclosure">
+                            <img src="/assets/images/advertiser_dis_text.png" width="120" height="9">
+                        </a>
+                    </div>
+
+                    {% set heroSecondaryImage = entry.hompageHeroSecondaryImage.first() %}
+                    <div class="banner-hero-card"><img class="img-responsive" src="{{ heroSecondaryImage.url }}"></div>
+
+                    <div class="banner-form-select">
+                        <form class="form-inline-hero" role="form">
+                            <div class="form-group-hero input-lg-hero ">
+                                <select id="hero_list_value" class="form-control-hero" onchange="window.location='/'+this.value;">
+                                    <option selected="selected">-- Select a Card Category --</option>
+                                    {% for category in entry.homepageDropdownMenu %}
+                                    <option value="{{ category.value }}">{{ category.label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </form>
+                    </div><!--banner-form-select-->
+
+                </div><!--column-->
+            </div><!--row-->
+        </div><!--container-->
+    </div><!--item-->
+</div><!--banner-block-->

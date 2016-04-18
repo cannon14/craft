@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [ -e /var/log/chef/disabled ]; then
+    exit 0
+fi
+
+export LC_ALL=en_US.UTF-8
+
+# check if we have a long running (possibly stuck) chef processes
+# if yes, kill them all (even waiting ones)
+chefpids=$(pidof chef-client)
+killchefs=0
+for chefpid in $chefpids; do
+    runtime=$(ps --no-headers -o etimes -p $chefpid)
+    if [ "$runtime" -gt "<%= @allowed_runtime %>" ]; then
+        killchefs=1
+    fi
+done
+if [ "$killchefs" == "1" ]; then
+    for chefpid in $chefpids; do
+        kill -KILL $chefpid
+    done
+fi
+
+chef-client \
+    -l info \
+    -L <%= @log_file %> \
+<% if @json_attributes_file -%>
+    -j <%= @json_attributes_file %> \
+<% end -%>
+    >/dev/null 2>&1
+
+if [ "$?" == "0" ]; then
+    echo 'ok' ><%= @status_file %>
+else
+    echo 'failed' ><%= @status_file %>
+fi
+
+chmod 640 <%= @log_file %>
+chmod 644 <%= @status_file %>

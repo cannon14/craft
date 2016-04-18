@@ -1,0 +1,46 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "Feeds" %}
+
+{% set tabs = {
+Feeds: { label: "Feeds", url: actionUrl('productFeeds_Feed/index') },
+Create:    { label: "Create Feed", url: actionUrl('productFeeds_Feed/create') }
+} %}
+
+{% set selectedTab = 'Feeds' %}
+{% set feeds = craft.productFeeds.getFeeds %}
+{% set content %}
+
+<table class="data fullwidth">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Key</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for feed in feeds %}
+    <tr>
+        <td>{{ feed.id }}</td>
+        <td>{{ feed.name|e }}</td>
+        <td>{{ feed.url|e }}</td>
+        <td>{{ feed.key }}</td>
+        {% set status = feed.active %}
+        <td>{{ feed.active == 1 ? 'Active' : 'Inactive' }}</td>
+        <td>
+            <a href="{{ actionUrl('productFeeds_Feed/edit', { id: feed.id }) }}" class="edit icon"></a>
+            &nbsp;&nbsp;
+            <a href="{{ actionUrl('productFeeds_Feed/delete', { id: feed.id }) }}" class="delete icon"></a>
+        </td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+{% endset %}

@@ -1,0 +1,113 @@
+{#
+# Category Page template
+# ---------------
+#
+# When this template gets loaded, it will be because someone has accessed
+# http://yoursite.com/ (without any URI). Craft checks to see if you have
+# a Single section set to be the Homepage (as you do, by default), and
+# loads the section’s Template (this file). A special ‘entry’ variable
+# will already be set for you, assigned to the Homepage entry.
+#
+# It's worth noting that even if you didn't have a Homepage Single section,
+# as long as this template remains at craft/templates/index.html, it
+# would still be the one to get loaded when accessing http://yoursite.com/,
+# albeit without an ‘entry’ variable already set for you.
+#
+# See this page for more details on how Craft routes requests:
+# http://craftcms.com/docs/routing
+#}
+
+{% extends "layouts/_site" %}
+
+{% includeCssFile '/assets/css/cc-card-category.css' %}
+{% includeCssFile "/assets/css/reviews.css" %}
+
+{% set myCss %}
+    .res-details ul {
+    list-style-type: disc;
+    }
+    .res-details ul:nth-child(1) li, .res-details ul:nth-child(2) li {
+    display:none;
+    }
+
+    .res-details ul:nth-child(1) li:nth-child(1), .res-details ul:nth-child(1) li:nth-child(2) {
+    display:block;
+    }
+
+    .schumer-package {
+    display:none;
+    }
+    .schumer-package:nth-child(-n+10) {
+    display:block;
+    }
+
+    .show-more-link {
+    margin-left:40px;
+    margin-bottom:15px;
+    }
+
+    .show-more-results {
+    display:block;
+    }
+{% endset %}
+
+{% includeCss myCss %}
+
+{% includeJsFile 'assets/js/category-page.js' %}
+
+{% set mappings = craft.products.getCardMappingsByCategoryId(category.categoryId) %}
+
+{% set title = category.title %}
+
+{% block content %}
+
+<div class="card-category-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-18">
+                <div class="row">
+
+                    <div class="col-md-24">
+
+                        {% include 'includes/category-page/_title-block' %}
+
+                        <div class="card-category-disclosure-hldr"><a data-target="#myModalDisclosure" data-toggle="modal" href="#">
+                            <img src="{{siteUrl}}assets/images/advertiser_dis_text.png" class="pull-right"></a>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        {% for map in mappings %}
+
+                        <div class="schumer-package">
+                        {% set card = craft.products.getCard(map.card_id) %}
+                        {% include 'includes/category-page/schumer-box/_'~category.schumerBox %}
+                        </div>
+
+                        {% endfor %}
+
+                        <div class="card-category-disclosure-hldr-bottom">
+                            <a data-target="#myModalDisclosure" data-toggle="modal" href="#">
+                                <img src="{{siteUrl}}assets/images/advertiser_dis_text.png" class="pull-right">
+                            </a>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <a class="show-more-results" href="#" style="display: block;">Show More Results</a><br><br>
+
+                        {% if category.disqusCategoryId is defined and category.disqusCategoryId != '' %}
+                        {% include 'includes/category-page/_disqus' %}
+                        {% endif %}
+
+                    </div><!--col-lg-24-->
+                </div><!--row-->
+            </div><!--col-md-18-->
+
+            <div class="col-md-6">
+                {% include 'includes/category-page/_right-gutter' %}
+            </div><!--column-->
+        </div><!--row-->
+    </div><!--container-->
+</div><!--card-category-block-->
+{% include 'includes/category-page/_back-to-top-block' %}
+
+{% endblock %}

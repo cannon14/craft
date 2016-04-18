@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+  ServerName <%= node['craft']['server_name'] %>
+  DocumentRoot <%= node['craft']['webroot_location'] %>
+  ServerAdmin <%= node['craft']['server_admin'] %>
+  
+  CustomLog logs/access.log combined
+  ErrorLog logs/error.log
+
+
+  SetEnv APPLICATION_ENV <%= node['craft']['environment'] %>
+
+  <Directory <%= node['craft']['webroot_location'] %> >
+                  Options Indexes FollowSymLinks
+                  AllowOverride All
+                  Order allow,deny
+                  allow from all
+  </Directory>
+
+</VirtualHost>

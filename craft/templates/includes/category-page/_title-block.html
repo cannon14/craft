@@ -1,0 +1,17 @@
+<div class="card-category-top">
+
+    {% if category.image.first().url is defined %}
+    <div class="logo-wrapper">
+        <div class="outset">
+            <div class="inset">
+                <span></span><img border="0" alt="{{ category.title }}" src="{{ category.image.first().url }}">
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="category-description-block">
+        <h1>{{ category.title }}</h1>
+        <p class="category-description">{{ category.body }}</p>
+        <p class="category-description-mobile">See offers from our partners below.</p>
+    </div>
+</div>
