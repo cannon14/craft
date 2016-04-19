@@ -33,6 +33,7 @@ class Reviews_IssuerController extends BaseController
         $this->renderTemplate('reviews/issuers/index', ['issuers'=>$issuerArray]);
     }
 
+
     /**
      * Edit Issuer
      * @throws HttpException
