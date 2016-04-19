@@ -49,7 +49,7 @@ class Reviews_IdMapController extends BaseController
         $variables['title'] = $variables['map']->name;
 
         $variables['crumbs'] = array(
-            array('label' => Craft::t('Maps'), 'url' => UrlHelper::getUrl('maps')),
+            array('label' => Craft::t('Maps'), 'url' => UrlHelper::getUrl('reviews/maps/index')),
         );
 
         $this->renderTemplate('reviews/maps/edit', $variables);

@@ -4,8 +4,9 @@
     <list default="true" id="acb5c31e-542b-4a7b-8fae-dfa8e6317da1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/vendor/guzzle/guzzle/vendor/doctrine/cache" afterPath="$PROJECT_DIR$/craft/app/vendor/guzzle/guzzle/vendor/doctrine/cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html" afterPath="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/edit.html" afterPath="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php" />
     </list>
     <ignored path="craft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,61 +28,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Reviews_ReviewService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ReviewService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.125">
-              <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Products_CreditcardController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/products/controllers/Products_CreditcardController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.958333">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reviews_IdMapController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8333335">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="29" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Reviews_ParserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+            <state vertical-scroll-proportion="-10.291667">
+              <caret line="93" column="86" selection-start-line="93" selection-start-column="86" selection-end-line="93" selection-end-column="86" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReviewsPlugin.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/ReviewsPlugin.php">
+      <file leaf-file-name="Reviews_ReviewController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5630841">
-              <caret line="53" column="88" selection-start-line="53" selection-start-column="88" selection-end-line="53" selection-end-column="88" />
+            <state vertical-scroll-proportion="-0.2356021">
+              <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/index.html">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/maps/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125">
-              <caret line="40" column="85" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
+            <state vertical-scroll-proportion="-3.75">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -90,38 +61,68 @@
       <file leaf-file-name="Reviews_IssuerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.416667">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.125">
+              <caret line="54" column="86" selection-start-line="54" selection-start-column="86" selection-end-line="54" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reviews_IdMapController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="52" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/maps/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/index.html">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.625">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="-25.0">
+              <caret line="40" column="85" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CApplication.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/app/framework/base/CApplication.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3333334">
+              <caret line="726" column="0" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,15 +187,15 @@
         <option value="$PROJECT_DIR$/craft/plugins/products/controllers/Products_CreditcardController.php" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/index.html" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/ReviewsPlugin.php" />
-        <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/variables/ReviewsVariable.php" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/index.html" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ReviewService.php" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/templates/maps/index.html" />
-        <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php" />
-        <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/edit.html" />
+        <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php" />
       </list>
     </option>
   </component>
@@ -645,9 +646,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32489452" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32489452" sideWeight="0.49713877" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3895921" sideWeight="0.4914163" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3895921" sideWeight="0.4914163" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -768,40 +769,17 @@
           <line>100</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php</url>
+          <line>28</line>
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="161" />
+      <option name="time" value="162" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/private/cookbooks/craft/recipes/database.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2222223">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/private/cookbooks/craft/recipes/php.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.148149">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/private/roles/craft.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/private/roles/base.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/cookbooks/craft/recipes/default.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45774648">
@@ -931,13 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/craft/app/templates/_includes/forms/elementSelect.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23809524">
@@ -967,32 +938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/Craft.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.916667">
-          <caret line="469" column="0" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/framework/base/CModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/craft/app/vendor/composer/ClassLoader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5">
           <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/framework/base/CApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07853403">
-          <caret line="726" column="0" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1021,14 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62827224">
           <caret line="689" column="0" selection-start-line="689" selection-start-column="0" selection-end-line="689" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1095,46 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8333335">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="29" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="40" column="85" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.416667">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625">
@@ -1153,8 +1054,120 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/ReviewsPlugin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5630841">
+        <state vertical-scroll-proportion="-10.041667">
           <caret line="53" column="88" selection-start-line="53" selection-start-column="88" selection-end-line="53" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35340315">
+          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/app/Craft.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.916667">
+          <caret line="469" column="0" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/app/framework/base/CModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ParserService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.666666">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/app/framework/base/CApplication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3333334">
+          <caret line="726" column="0" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/maps/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.0">
+          <caret line="40" column="85" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/maps/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="52" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="54" column="86" selection-start-line="54" selection-start-column="86" selection-end-line="54" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.291667">
+          <caret line="93" column="86" selection-start-line="93" selection-start-column="86" selection-end-line="93" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.2356021">
+          <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
           <folding />
         </state>
       </provider>

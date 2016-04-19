@@ -91,7 +91,7 @@ class Reviews_ParserController extends BaseController
         $variables['title'] = $variables['parser']->name;
 
         $variables['crumbs'] = array(
-            array('label' => Craft::t('Parsers'), 'url' => UrlHelper::getUrl('parsers')),
+            array('label' => Craft::t('Parsers'), 'url' => UrlHelper::getUrl('reviews/parsers/index')),
         );
 
         $this->renderTemplate('reviews/parsers/edit', $variables);

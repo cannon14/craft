@@ -52,7 +52,7 @@ class Reviews_IssuerController extends BaseController
         $variables['title'] = $variables['issuer']->name;
 
         $variables['crumbs'] = array(
-            array('label' => Craft::t('issuers'), 'url' => UrlHelper::getUrl('issuers')),
+            array('label' => Craft::t('issuers'), 'url' => UrlHelper::getUrl('reviews/issuers/index')),
         );
 
         $this->renderTemplate('reviews/issuers/edit', $variables);
