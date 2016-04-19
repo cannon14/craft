@@ -7,7 +7,7 @@
 {% set content %}
 
 <form method="POST" action="{{ url('reviews/parsers/save') }}" accept-charset="UTF-8">
-    <input type="hidden" name="redirect" value="reviews/parsers">
+    <input type="hidden" name="redirect" value="reviews/parsers/index">
     <input type="hidden" name="id" value="{{parser.id}}">
 
     {{ forms.lightswitchField({
