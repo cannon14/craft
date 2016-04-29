@@ -14,18 +14,8 @@ class Reviews_DashboardController extends BaseController
     public function actionIndex()
     {
         $issuers = craft()->reviews_issuer->getIssuers();
+
         $this->renderTemplate('reviews/dashboard/index', ['issuers'=>$issuers]);
     }
 
-    public function actionEdit()
-    {
-
-
-    }
-
-    public function actionUpdate()
-    {
-        $this->requirePostRequest();
-
-    }
 }

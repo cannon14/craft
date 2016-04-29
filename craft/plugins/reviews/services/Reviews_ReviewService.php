@@ -59,6 +59,22 @@ class Reviews_ReviewService extends BaseApplicationComponent
     }
 
     /**
+     * Get products by issuer
+     * @param $issuerId
+     * @return \mixed[]
+     */
+    public function getProductsByIssuer($issuerId) {
+
+        $filter = [];
+        if($issuerId != 'all') {
+            $issuer = craft()->reviews_issuer->getIssuerById($issuerId);
+            $filter['issuer'] = $issuer->name;
+        }
+
+        return $this->collection->distinct('Product Name', ['issuer'=>$issuer->name]);
+    }
+
+    /**
      * Get review count by issuer
      * @param $issuerName
      * @return int

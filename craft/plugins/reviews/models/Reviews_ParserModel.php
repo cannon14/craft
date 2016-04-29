@@ -13,8 +13,8 @@ class Reviews_ParserModel extends BaseModel
     {
         return array(
             'id' => AttributeType::Number,
-            'name' => AttributeType::String,
-            'issuer_id' => AttributeType::Number,
+            'name' => [AttributeType::String, 'required'=>true],
+            'issuer_id' => [AttributeType::Number, 'required'=>true],
             'description' => [AttributeType::String, 'column'=>ColumnType::Text],
             'columns' => [AttributeType::String, 'column' => ColumnType::Text],
             'active' => AttributeType::Bool,

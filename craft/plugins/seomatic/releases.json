@@ -1,5 +1,51 @@
 [
     {
+        "version": "1.1.15",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-04-25T11:00:00-05:00",
+        "notes": [
+            "[Added] Added a `siteUrlOverride` config setting for when you need to override the `siteUrl`, for instance in a headless ElementAPI server",
+            "[Added] Added breadcrumbs to the AdminCP UI",
+            "[Added] Added the ability to change the display name of the SEOmatic plugin in the AdminCP",
+            "[Improved] Fixed an issue with empty organizationOwnerContactPoints",
+            "[Improved] The array passed into renderJSONLD() is now sanitized before it is rendered",
+            "[Improved] craft.locale is now properly limited to an ISO 639-1 language code in the metadata",
+            "[Improved] Facebook locales now ensure that they have a territory as well as a language, e.g.: fr_FR, not just fr",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
+        "version": "1.1.14",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-04-19T11:00:00-05:00",
+        "notes": [
+            "[Added] Added [Organization Contact Points](https://developers.google.com/structured-data/customize/contact-points) that can appear in the Google Knowledge panel in some searches",
+            "[Added] You can control whether Product JSON-LD is rendered via the `renderCommerceProductJSONLD` config variable",
+            "[Added] Added support for arrays as the root JSON-LD type in the JSON-LD generator",
+            "[Improved] SEOmatic now outputs JSON-LD microdata for all of the Craft Commerce Product Variants (previously it was outputting only the default Variant)",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
+        "version": "1.1.13",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-04-16T11:00:00-05:00",
+        "notes": [
+            "[Added] If an SEOmatic FieldType is attached to a Craft Commerce Product, in addition to rendering the page SEO Meta, it will also generate [Product JSON-LD microdata](https://developers.google.com/structured-data/rich-snippets/products) that describes the product.",
+            "[Improved] SEOmatic now uses control panel sub-navs if you're running Craft 2.5 or later",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
+        "version": "1.1.12",
+        "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
+        "date": "2016-04-14T11:00:00-05:00",
+        "notes": [
+            "[Improved] SEOmatic will now populate its FieldType with default values on saveElement(), which is triggered via import plugings and also via Settings → Edit My Section → hit Save",
+            "[Improved] Updated the README.md"
+        ]
+    },
+    {
         "version": "1.1.11",
         "downloadUrl": "https://github.com/nystudio107/seomatic/archive/master.zip",
         "date": "2016-04-08T11:00:00-05:00",

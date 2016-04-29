@@ -17,6 +17,7 @@ Category Pages:
 -Missing Issuer telephone number from feed
 -Editorial content is currently static
 -Add balance transfer calculator scripts
+-Hide back-to-top on page load
 
 Product Detail Pages:
 DONE-Needs to be implemented

@@ -19,7 +19,7 @@ class Seomatic_MetaFieldType extends BaseFieldType
 
     public function getInputHtml($name, $value)
     {
-        if (isset($this->element)) 
+        if (isset($this->element))
         {
 
         $id = craft()->templates->formatInputId($name);
@@ -261,15 +261,17 @@ class Seomatic_MetaFieldType extends BaseFieldType
      */
     public function prepValueFromPost($value)
     {
+        $result = null;
 
         if (empty($value))
         {
-            return new Seomatic_MetaFieldModel();
+            $result = $this->prepValue($value);
         }
         else
         {
-            return new Seomatic_MetaFieldModel($value);
+            $result = new Seomatic_MetaFieldModel($value);
         }
+        return $result;
     }
 
     public function prepValue($value)
@@ -304,6 +306,28 @@ class Seomatic_MetaFieldType extends BaseFieldType
         }
 
         return $value;
+    }
+
+    /**
+     * @inheritDoc IFieldType::onAfterElementSave()
+     *
+     * @return null
+     */
+    public function onAfterElementSave()
+    {
+        $element = $this->element;
+        $content = $element->getContent();
+        $fieldHandle = $this->model->handle;
+
+        if (empty($fieldHandle))
+        {
+            $defaultField = $this->prepValue(null);
+            $content->setAttribute($field->handle, $defaultField);
+            $element->setContent($content);
+            craft()->content->saveContent($element);
+        }
+
+        parent::onAfterElementSave();
     }
 
     /**

@@ -10,6 +10,7 @@ class SeomaticService extends BaseApplicationComponent
 {
 
     protected $entryMeta = null;
+    protected $entrySeoCommerceVariants = null;
     protected $cachedSettings = array();
     protected $cachedSiteMeta = array();
     protected $cachedIdentity = array();
@@ -17,6 +18,7 @@ class SeomaticService extends BaseApplicationComponent
     protected $cachedSocial = array();
     protected $cachedCreator = array();
     protected $cachedCreatorJSONLD = array();
+    protected $cachedProductJSONLD = array();
     protected $cachedWebSiteJSONLD = array();
     protected $renderedMetaVars = null;
 
@@ -183,6 +185,22 @@ class SeomaticService extends BaseApplicationComponent
         $this->sanitizeMetaVars($metaVars);
         $webSite = $this->getWebSiteJSONLD($metaVars, $locale);
         $htmlText = $this->renderJSONLD($webSite, $isPreview);
+        return $htmlText;
+    } /* -- renderWebsite */
+
+/* --------------------------------------------------------------------------------
+    Render the SEOmatic Product template
+-------------------------------------------------------------------------------- */
+
+    public function renderProduct($metaVars, $locale, $isPreview=false)
+    {
+        $htmlText = "";
+
+        if (isset($metaVars['seomaticProduct']))
+        {
+            $this->sanitizeMetaVars($metaVars);
+            $htmlText = $this->renderJSONLD($metaVars['seomaticProduct'], $isPreview);
+        }
         return $htmlText;
     } /* -- renderWebsite */
 
@@ -390,6 +408,28 @@ class SeomaticService extends BaseApplicationComponent
                         {
                             $entryMeta = $value;
                             $entryMetaUrl = $this->getFullyQualifiedUrl($element->url);
+
+    /* -- If this is a Commerce Product, fill in some additional info */
+
+                            if ($elemType == "Commerce_Product" && craft()->config->get("renderCommerceProductJSONLD", "seomatic"))
+                            {
+                                $commerceSettings = craft()->commerce_settings->getSettings();
+                                $variants = $element->getVariants();
+                                $commerceVariants = array();
+
+                                foreach ($variants as $variant)
+                                {
+                                    $commerceVariant = array(
+                                        'seoProductDescription' => $variant->getDescription(),
+                                        'seoProductPrice' => number_format($variant->getPrice(), 2),
+                                        'seoProductCurrency' => $commerceSettings['defaultCurrency'],
+                                        'seoProductSku' => $variant->getSku(),
+                                    );
+                                    $commerceVariants[] = $commerceVariant;
+                                }
+                                if (!empty($commerceVariants))
+                                    $entryMeta['seoCommerceVariants'] = $commerceVariants;
+                            }
 
     /* -- Swap in any SEOmatic fields that are pulling from other entry fields */
 
@@ -604,6 +644,12 @@ class SeomaticService extends BaseApplicationComponent
             else
                 $meta['seoImage'] = '';
 
+/* -- For Craft Commerce Products */
+
+            if (isset($entryMeta->seoCommerceVariants) && !empty($entryMeta->seoCommerceVariants))
+            {
+                $this->entrySeoCommerceVariants = $entryMeta->seoCommerceVariants;
+            }
             $meta = array_filter($meta);
         }
         $this->entryMeta = $meta;
@@ -659,10 +705,16 @@ class SeomaticService extends BaseApplicationComponent
 
             $openGraph = array();
             $openGraph['type'] = $meta['openGraphType'];
+
+/* -- Kludges to keep Facebook happy */
+
             if ($locale == "en")
                 $openGraph['locale'] = 'en_US';
             else
                 $openGraph['locale'] = $locale;
+            if (strlen($openGraph['locale']) == 2)
+                $openGraph['locale'] = $openGraph['locale'] . "_" . strtoupper($openGraph['locale']);
+
             $openGraph['url'] = $meta['canonicalUrl'];
             $openGraph['title'] = $titlePrefix . $meta['seoTitle'] . $titleSuffix;
             $openGraph['description'] = $meta['seoDescription'];
@@ -778,6 +830,8 @@ class SeomaticService extends BaseApplicationComponent
 
         $result['seomaticIdentity'] = $this->getIdentityJSONLD($result['seomaticIdentity'], $helper, $locale);
         $result['seomaticCreator'] = $this->getCreatorJSONLD($result['seomaticCreator'], $helper, $locale);
+        if ($this->entryMeta && isset($this->entrySeoCommerceVariants) && !empty($this->entrySeoCommerceVariants))
+            $result['seomaticProduct'] = $this->getProductJSONLD($result, $locale);
 
 /* -- Return our global variables */
 
@@ -1053,6 +1107,27 @@ class SeomaticService extends BaseApplicationComponent
         $identity['organizationOwnerFounder'] = $settings['organizationOwnerFounder'];
         $identity['organizationOwnerFoundingDate'] = $settings['organizationOwnerFoundingDate'];
         $identity['organizationOwnerFoundingLocation'] = $settings['organizationOwnerFoundingLocation'];
+        $identity['organizationOwnerContactPoints'] = $settings['organizationOwnerContactPoints'];
+
+/* -- Handle the organization contact points */
+
+        $contactPoints = array();
+        if (isset($identity['organizationOwnerContactPoints']) && is_array($identity['organizationOwnerContactPoints']))
+        {
+            foreach ($identity['organizationOwnerContactPoints'] as $contacts)
+            {
+                $spec = array(
+                    "type" => "ContactPoint",
+                    "telephone" => $contacts['telephone'],
+                    "contactType" => $contacts['contactType'],
+                );
+                $contactPoints[] = $spec;
+            }
+        }
+        $contactPoints = array_filter($contactPoints);
+        $identity['contactPoint'] = $contactPoints;
+        if (count($identity['contactPoint']) < 1)
+            unset($identity['contactPoint']);
 
         $identity['personOwnerGender'] = $settings['personOwnerGender'];
         $identity['personOwnerBirthPlace'] = $settings['personOwnerBirthPlace'];
@@ -1165,19 +1240,6 @@ class SeomaticService extends BaseApplicationComponent
         if (count($identityJSONLD['address']) == 1)
             unset($identityJSONLD['address']);
 
-/* -- This needs to be an additional field if we implement it
-        if ($identity['genericOwnerTelephone'])
-        {
-            $contactPoint = array(
-                "type" => "ContactPoint",
-                "telephone" => $identity['genericOwnerTelephone'],
-                "contactType" => "Contact",
-            );
-            $contactPoint = array_filter($contactPoint);
-            $identityJSONLD['contactPoint'] = array($contactPoint);
-        }
-*/
-
 /* -- Settings for all person Identity types */
 
         if ($identity['siteOwnerType'] == "Person")
@@ -1233,6 +1295,8 @@ class SeomaticService extends BaseApplicationComponent
             $identityJSONLD['founder'] = $identity['organizationOwnerFounder'];
             $identityJSONLD['foundingDate'] = $identity['organizationOwnerFoundingDate'];
             $identityJSONLD['foundingLocation'] = $identity['organizationOwnerFoundingLocation'];
+            if (isset($identity['contactPoint']))
+                $identityJSONLD['contactPoint'] = $identity['contactPoint'];
         }
 
 /* -- Settings on a per-Identity sub-type basis */
@@ -1400,6 +1464,27 @@ class SeomaticService extends BaseApplicationComponent
         $creator['organizationCreatorFounder'] = $settings['organizationCreatorFounder'];
         $creator['organizationCreatorFoundingDate'] = $settings['organizationCreatorFoundingDate'];
         $creator['organizationCreatorFoundingLocation'] = $settings['organizationCreatorFoundingLocation'];
+        $creator['organizationCreatorContactPoints'] = $settings['organizationCreatorContactPoints'];
+
+/* -- Handle the organization contact points */
+
+        $contactPoints = array();
+        if (isset($creator['organizationCreatorContactPoints']) && is_array($creator['organizationCreatorContactPoints']))
+        {
+            foreach ($creator['organizationCreatorContactPoints'] as $contacts)
+            {
+                $spec = array(
+                    "type" => "ContactPoint",
+                    "telephone" => $contacts['telephone'],
+                    "contactType" => $contacts['contactType'],
+                );
+                $contactPoints[] = $spec;
+            }
+        }
+        $contactPoints = array_filter($contactPoints);
+        $creator['contactPoint'] = $contactPoints;
+        if (count($creator['contactPoint']) < 1)
+            unset($creator['contactPoint']);
 
         $creator['personCreatorGender'] = $settings['personCreatorGender'];
         $creator['personCreatorBirthPlace'] = $settings['personCreatorBirthPlace'];
@@ -1487,7 +1572,7 @@ class SeomaticService extends BaseApplicationComponent
 
 /* -- Settings for all organization Creator types */
 
-        if ($creator['siteCreatorType'] == "Organization")
+        if ($creator['siteCreatorType'] == "Organization" || $creator['siteCreatorType'] == "Corporation")
         {
             if (isset($creator['genericCreatorImage']))
                 $creatorJSONLD['logo'] = $creator['genericCreatorImage'];
@@ -1531,6 +1616,8 @@ class SeomaticService extends BaseApplicationComponent
             $creatorJSONLD['founder'] = $creator['organizationCreatorFounder'];
             $creatorJSONLD['foundingDate'] = $creator['organizationCreatorFoundingDate'];
             $creatorJSONLD['foundingLocation'] = $creator['organizationCreatorFoundingLocation'];
+            if (isset($creator['contactPoint']))
+                $creatorJSONLD['contactPoint'] = $creator['contactPoint'];
         }
 
 /* -- Settings on a per-Creator sub-type basis */
@@ -1589,6 +1676,54 @@ class SeomaticService extends BaseApplicationComponent
 
         return $result;
     } /* -- getCreatorJSONLD */
+
+/* --------------------------------------------------------------------------------
+    Get the Product JSON-LD
+-------------------------------------------------------------------------------- */
+
+    public function getProductJSONLD($metaVars, $locale)
+    {
+
+/* -- Cache it in our class; no need to fetch it more than once */
+
+        if (isset($this->cachedProductJSONLD[$locale]))
+            return $this->cachedProductJSONLD[$locale];
+
+        $productsArrayJSONLD = array();
+
+        foreach ($this->entrySeoCommerceVariants as $variant)
+        {
+            $productJSONLD = array();
+
+    /* -- Settings generic to all Creator types */
+
+            $productJSONLD['type'] = "Product";
+            $productJSONLD['name'] = $variant['seoProductDescription'];
+            $productJSONLD['description'] = $metaVars['seomaticMeta']['seoDescription'];
+            $productJSONLD['image'] = $metaVars['seomaticMeta']['seoImage'];
+            $productJSONLD['logo'] = $metaVars['seomaticMeta']['seoImage'];
+            $productJSONLD['url'] = $metaVars['seomaticMeta']['canonicalUrl'];
+
+            $productJSONLD['sku'] = $variant['seoProductSku'];
+
+            $offer = array(
+                "type" => "Offer",
+                "url" => $metaVars['seomaticMeta']['canonicalUrl'],
+                "price" =>  $variant['seoProductPrice'],
+                "priceCurrency" =>  $variant['seoProductCurrency'],
+                "offeredBy" =>  $metaVars['seomaticIdentity'],
+                "seller" =>  $metaVars['seomaticIdentity'],
+            );
+            $offer = array_filter($offer);
+            $productJSONLD['offers'] = $offer;
+
+            $productsArrayJSONLD[] = array_filter($productJSONLD);
+        }
+
+        $this->cachedProductJSONLD[$locale] = $productsArrayJSONLD;
+
+        return $productsArrayJSONLD;
+    } /* -- getProductJSONLD */
 
 /* --------------------------------------------------------------------------------
     Get the WebSite JSON-LD
@@ -2009,6 +2144,9 @@ class SeomaticService extends BaseApplicationComponent
         $seomaticSocial = $metaVars['seomaticSocial'];
         $seomaticCreator = $metaVars['seomaticCreator'];
 
+        if (isset($metaVars['seomaticProduct']))
+            $seomaticProduct = $metaVars['seomaticCreator'];
+
 /* -- Set up the title prefix and suffix for the OpenGraph and Twitter titles */
 
         $titlePrefix = "";
@@ -2055,17 +2193,21 @@ class SeomaticService extends BaseApplicationComponent
 
 /* -- Make sure all of our variables are properly encoded */
 
-        $this->_sanitizeArray($seomaticMeta);
-        $this->_sanitizeArray($seomaticSiteMeta);
-        $this->_sanitizeArray($seomaticIdentity);
-        $this->_sanitizeArray($seomaticSocial);
-        $this->_sanitizeArray($seomaticCreator);
+        $this->sanitizeArray($seomaticMeta);
+        $this->sanitizeArray($seomaticSiteMeta);
+        $this->sanitizeArray($seomaticIdentity);
+        $this->sanitizeArray($seomaticSocial);
+        $this->sanitizeArray($seomaticCreator);
+        if (isset($metaVars['seomaticProduct']))
+            $this->sanitizeArray($seomaticProduct);
 
         $metaVars['seomaticMeta'] = $seomaticMeta;
         $metaVars['seomaticSiteMeta'] = $seomaticSiteMeta;
         $metaVars['seomaticIdentity'] = $seomaticIdentity;
         $metaVars['seomaticSocial'] = $seomaticSocial;
         $metaVars['seomaticCreator'] = $seomaticCreator;
+        if (isset($metaVars['seomaticProduct']))
+            $metaVars['seomaticCreator'] = $seomaticProduct;
 
     } /* -- sanitizeMetaVars */
 
@@ -2085,7 +2227,12 @@ public function getFullyQualifiedUrl($url)
     }
     else
     {
-        $siteUrl = craft()->getSiteUrl();
+        $siteUrlOverride = craft()->config->get("siteUrlOverride", "seomatic");
+        if ($siteUrlOverride)
+            $siteUrl = $siteUrlOverride;
+        else
+            $siteUrl = craft()->getSiteUrl();
+
         $urlParts = parse_url($siteUrl);
         if (isset($urlParts['scheme']) && isset($urlParts['host']))
             $siteUrl = $urlParts['scheme'] . "://" . $urlParts['host'] . "/";
@@ -2174,7 +2321,7 @@ public function getFullyQualifiedUrl($url)
     Sanitize the passed in array recursively
 -------------------------------------------------------------------------------- */
 
-    private function _sanitizeArray(&$theArray)
+    public function sanitizeArray(&$theArray)
     {
         foreach ($theArray as $key => &$value)
         {
@@ -2193,10 +2340,10 @@ public function getFullyQualifiedUrl($url)
             else
             {
                 if (is_array($value))
-                    $this->_sanitizeArray($value);
+                    $this->sanitizeArray($value);
             }
         }
-    } /* -- _sanitizeArray */
+    } /* -- sanitizeArray */
 
 /* --------------------------------------------------------------------------------
     Cleanup text before extracting keywords/summary
@@ -2267,6 +2414,12 @@ public function getFullyQualifiedUrl($url)
                         }
                         else
                             $subLines .= "\"" . $subValue . "\"" . $subComma;
+                    }
+                    if ($level < 1)
+                    {
+                        $predicate = "{% set " . $key . " = [ ";
+                        $suffix = "] %}" . "\n\n";
+                        $key = "";
                     }
                     $line =  $key . $predicate;
                     $line = str_pad($line, strlen($line) + ($level * 4), " ", STR_PAD_LEFT);
@@ -2378,7 +2531,7 @@ public function getFullyQualifiedUrl($url)
      */
     public function convertTimes(&$value, $timezone=null)
     {
-        if (is_array($value))
+        if (isset($value) && is_array($value))
         {
             foreach ($value as &$day)
             {

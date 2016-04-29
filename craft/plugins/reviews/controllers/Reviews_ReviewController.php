@@ -63,6 +63,20 @@ class Reviews_ReviewController extends BaseController
     }
 
     /**
+     * Get products associated with an issuer
+     * @throws HttpException
+     */
+    public function actionIssuerProducts() {
+        $this->requireAjaxRequest();
+
+        $issuerId = craft()->request->getParam('issuer_id');
+
+        $products = craft()->reviews_review->getProductsByIssuer($issuerId);
+
+        $this->returnJson($products);
+    }
+
+    /**
      * Disable reviews;
      * @throws HttpException
      */

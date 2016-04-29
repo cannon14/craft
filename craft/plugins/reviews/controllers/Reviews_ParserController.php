@@ -22,6 +22,17 @@ class Reviews_ParserController extends BaseController
     }
 
     /**
+     * Create a parser
+     * @throws HttpException
+     */
+    public function actionCreate() {
+
+        $issuers = craft()->reviews_issuer->getIssuers();
+
+        $this->renderTemplate('reviews/parsers/create', ['issuers'=>$issuers]);
+    }
+
+    /**
      * Saves a issuer
      */
     public function actionSave()
@@ -37,37 +48,49 @@ class Reviews_ParserController extends BaseController
             $parser = new Reviews_ParserModel();
         }
 
-        // Shared attributes
-        $parser->name       = craft()->request->getPost('name');
-        $parser->issuer_id       = craft()->request->getPost('issuer_id');
-        $parser->description       = craft()->request->getPost('description');
-        $parser->active     = craft()->request->getPost('active');
+        if($parser->validate()) {
+            // Shared attributes
+            $parser->name = craft()->request->getPost('name');
+            $parser->issuer_id = craft()->request->getPost('issuer_id');
+            $parser->description = craft()->request->getPost('description');
+            $parser->active = craft()->request->getPost('active');
 
-        $columns = [];
-        $index = 1;
-        do {
-            $columns[] = craft()->request->getPost('column'.$index);
-            $index++;
+            $columns = [];
+            $index = 1;
+            do {
+                $columns[] = craft()->request->getPost('column' . $index);
+                $index++;
+            } while (null != craft()->request->getPost('column' . $index));
+
+            $parser->columns = json_encode($columns);
+
+            // Save it
+            if (craft()->reviews_parser->saveParser($parser)) {
+                craft()->userSession->setNotice(Craft::t('Parser saved.'));
+                $this->redirectToPostedUrl($parser);
+            } else {
+                craft()->userSession->setError(Craft::t('Couldn’t save parser.'));
+            }
+
+            // Send the parser back to the template
+            craft()->urlManager->setRouteVariables(array(
+                'parser' => $parser
+            ));
         }
-        while(null != craft()->request->getPost('column'.$index));
+        else {
+            // Here's a list of all the errors, grouped by attribute:
+            $errors = $parser->getErrors();
 
-        $parser->columns = json_encode($columns);
+            craft()->userSession->setError(Craft::t($value));
 
-        // Save it
-        if (craft()->reviews_parser->saveParser($parser))
-        {
-            craft()->userSession->setNotice(Craft::t('Parser saved.'));
-            $this->redirectToPostedUrl($parser);
+            craft()->urlManager->setRouteVariables(array(
+                'parser' => $parser,
+                'errors' => $errors
+            ));
+
+            $this->redirect('reviews/parsers/new');
+
         }
-        else
-        {
-            craft()->userSession->setError(Craft::t('Couldn’t save parser.'));
-        }
-
-        // Send the calendar back to the template
-        craft()->urlManager->setRouteVariables(array(
-            'parser' => $parser
-        ));
     }
 
     /**

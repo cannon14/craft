@@ -5,11 +5,6 @@ $(document).ready(function() {
     //Find out if screen is in mobile or desktop range.
     var isNotMobile = window.matchMedia("only screen and (min-width: 640px)");
 
-    //If in desktop range, make the header sticky.
-    if (isNotMobile.matches) {
-        $("#header-block").sticky({ topSpacing: 0 });
-    }
-
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     // disable nav click activation on desktop / tablet
     var $navItems = $('.navbar-nav > li.dropdown > a.dropdown-toggle');

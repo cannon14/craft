@@ -58,7 +58,7 @@ class ReviewsPlugin extends BasePlugin
             'reviews/maps/delete'                   => array('action' => 'reviews/idMap/delete'),
 
             'reviews/parsers/index'                 => array('action' => 'reviews/parser/index'),
-            'reviews/parsers/new'                   => 'reviews/parsers/create',
+            'reviews/parsers/new'                   => array('action' => 'reviews/parser/create'),
             'reviews/parsers/edit'                  => array('action' => 'reviews/parser/edit'),
             'reviews/parsers/save'                  => array('action' => 'reviews/parser/save'),
             'reviews/parsers/delete'                => array('action' => 'reviews/parser/delete'),

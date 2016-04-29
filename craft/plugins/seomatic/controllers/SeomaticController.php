@@ -6,6 +6,18 @@ class SeomaticController extends BaseController
 
     protected $allowAnonymous = array('actionRenderHumans', 'actionRenderRobots');
 
+/**
+ */
+    public function actionEditSettings()
+    {
+        $retourPlugin = craft()->plugins->getPlugin('seomatic');
+        $settings = $retourPlugin->getSettings();
+
+        $this->renderTemplate('seomatic/settings', array(
+           'settings' => $settings
+        ));
+    } /* -- actionEditSettings */
+
 /* --------------------------------------------------------------------------------
     Render the humans.txt template
 -------------------------------------------------------------------------------- */
@@ -541,6 +553,7 @@ class SeomaticController extends BaseController
         $record->organizationOwnerFounder = craft()->request->getPost('organizationOwnerFounder', $record->organizationOwnerFounder);
         $record->organizationOwnerFoundingDate = craft()->request->getPost('organizationOwnerFoundingDate', $record->organizationOwnerFoundingDate);
         $record->organizationOwnerFoundingLocation = craft()->request->getPost('organizationOwnerFoundingLocation', $record->organizationOwnerFoundingLocation);
+        $record->organizationOwnerContactPoints = craft()->request->getPost('organizationOwnerContactPoints', array());
 
 /* -- Person owner fields https://schema.org/Person */
 
@@ -549,7 +562,7 @@ class SeomaticController extends BaseController
 
 /* -- LocalBusiness owner fields https://schema.org/LocalBusiness */
 
-        $hours = craft()->request->getPost('localBusinessOwnerOpeningHours', $record->localBusinessOwnerOpeningHours);
+        $hours = craft()->request->getPost('localBusinessOwnerOpeningHours', array());
         craft()->seomatic->convertTimes($hours, craft()->getTimeZone());
         $record->localBusinessOwnerOpeningHours = $hours;
 
@@ -684,6 +697,7 @@ class SeomaticController extends BaseController
         $record->organizationCreatorFounder = craft()->request->getPost('organizationCreatorFounder', $record->organizationCreatorFounder);
         $record->organizationCreatorFoundingDate = craft()->request->getPost('organizationCreatorFoundingDate', $record->organizationCreatorFoundingDate);
         $record->organizationCreatorFoundingLocation = craft()->request->getPost('organizationCreatorFoundingLocation', $record->organizationCreatorFoundingLocation);
+        $record->organizationCreatorContactPoints = craft()->request->getPost('organizationCreatorContactPoints', array());
 
 /* -- Person Creator fields https://schema.org/Person */
 

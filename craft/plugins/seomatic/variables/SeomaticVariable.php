@@ -44,6 +44,7 @@ class SeomaticVariable
 
     public function renderJSONLD($object=array())
     {
+        craft()->seomatic->sanitizeArray($object);
         $result = craft()->seomatic->renderJSONLD($object);
 
         return TemplateHelper::getRaw(rtrim($result));
@@ -274,6 +275,32 @@ class SeomaticVariable
 
         return rtrim($result);
     } /* -- renderWebsite */
+
+/* --------------------------------------------------------------------------------
+    Render the SEOmatic Product template
+-------------------------------------------------------------------------------- */
+
+    function renderProduct($elementId=null, $locale=null, $isPreview=false)
+    {
+        if (!$locale)
+            $locale = craft()->language;
+
+        if ($elementId)
+        {
+            $element = craft()->elements->getElementById($elementId, null, $locale);
+            if ($element)
+            {
+                $entryMeta = craft()->seomatic->getMetaFromElement($element);
+                if ($entryMeta)
+                    craft()->seomatic->setEntryMeta($entryMeta, $element->url);
+            }
+        }
+
+        $metaVars = craft()->seomatic->getGlobals('', $locale);
+        $result = craft()->seomatic->renderProduct($metaVars, $locale, $isPreview);
+
+        return rtrim($result);
+    } /* -- renderProduct */
 
 /* --------------------------------------------------------------------------------
     Render the SEOmatic Place template

@@ -6,6 +6,12 @@
 
 {% set content %}
 
+{% if errors is defined %}
+{% for error in errors %}
+<p>{{ error }}</p>
+{% endfor %}
+{% endif %}
+
 <form method="POST" action="{{ url('reviews/parsers/save') }}" accept-charset="UTF-8">
     <input type="hidden" name="redirect" value="reviews/parsers/index">
 
@@ -29,11 +35,19 @@
     name: "description",
     }) }}
 
-    {{ forms.textField({
-    label: "Issuer ID",
-    instructions: "Enter Issuer ID",
-    name: "issuer_id",
-    }) }}
+    <div class="field">
+        <div class="heading">
+            <label>Issuer</label>
+            <div class="instructions"><p>Select Issuer to associate with parser</p>
+            </div>
+        </div>
+    <select name="issuer_id">
+        <option value="">--Select an Issuer--</option>
+    {% for issuer in issuers %}
+        <option value="{{ issuer.id }}">{{ issuer.name }}</option>
+    {% endfor %}
+    </select>
+    </div>
 
     <h2>Column Fields</h2>
     <div id="columns">
