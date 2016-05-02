@@ -13,7 +13,7 @@ return array(
     'devMode' => true,
     'useCompressedJs' => false,
     'cacheDuration' => 'P1W',
-    //'cacheMethod' => 'redis',
+    'cacheMethod' => 'redis',
     'defaultCookieDomain' => '.creditcards.com',
     'phpMaxMemoryLimit' => '1024M',
     'phpSessionName' => 'CCCOMUSSESSID',
@@ -22,4 +22,5 @@ return array(
     'slugWordSeparator' => '-',
     'postCpLoginRedirect' => 'dashboard',
     'userSessionDuration' => false,
+    'extraAllowedFileExtensions' => 'css, js, less, scss, sass',
 );

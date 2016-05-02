@@ -34,7 +34,7 @@ $(document).ready(function() {
             success: function(data) {
                 var object = $(objectId);
                 $.each(data, function(i, item) {
-                    object.append("<option value="+item+">"+item+"</option>");
+                    object.append('<option value="'+item+'">'+item+'</option>');
                 });
             },
             error: function (xhr, ajaxOptions, thrownError) {

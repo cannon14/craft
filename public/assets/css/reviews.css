@@ -3,8 +3,22 @@
 	font-weight: bold;
 	margin-bottom:25px;
 }
-.staff-review-text table {
-	max-width:750px;
+
+.staff-review-text  {
+	border:thin solid #999;
+	padding:10px 15px;
+}
+.staff-review-star-rating {
+	border:thin solid #999;
+	padding:5px;
+	margin-left:15px;
+}
+.staff-review-star-rating p {
+	padding: 5px 0;
+	margin:0;
+}
+.staff-review-star-rating .star-rating {
+	margin:0;
 }
 .author_image {
 	margin-right:15px;

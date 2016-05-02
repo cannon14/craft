@@ -2,90 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acb5c31e-542b-4a7b-8fae-dfa8e6317da1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/reviews/resources/js/dashboard.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/vendor/jquery.sticky.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/accesscontrol/AccessControlPlugin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/accesscontrol/templates/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/analytics/AnalyticsPlugin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/analytics/templates/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/editorial/EditorialPlugin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/editorial/templates/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/offerclick/OfferClickPlugin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/offerclick/controllers/OfferClick_OfferClickController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/offerclick/resources/js/loading.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/offerclick/services/OfferClick_OfferClickService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/plugins/offerclick/templates/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/craft/templates/includes/_loading.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/offer-click.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/css/css.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/vendor/guzzle/guzzle/vendor/doctrine/cache" afterPath="$PROJECT_DIR$/craft/app/vendor/guzzle/guzzle/vendor/doctrine/cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/.htaccess" afterPath="$PROJECT_DIR$/craft/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/Info.php" afterPath="$PROJECT_DIR$/craft/app/Info.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/assetsourcetypes/GoogleCloudAssetSourceType.php" afterPath="$PROJECT_DIR$/craft/app/assetsourcetypes/GoogleCloudAssetSourceType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/assetsourcetypes/RackspaceAssetSourceType.php" afterPath="$PROJECT_DIR$/craft/app/assetsourcetypes/RackspaceAssetSourceType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/assetsourcetypes/S3AssetSourceType.php" afterPath="$PROJECT_DIR$/craft/app/assetsourcetypes/S3AssetSourceType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/controllers/UtilsController.php" afterPath="$PROJECT_DIR$/craft/app/controllers/UtilsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/etc/requirements/Requirements.php" afterPath="$PROJECT_DIR$/craft/app/etc/requirements/Requirements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/fieldtypes/RichTextFieldType.php" afterPath="$PROJECT_DIR$/craft/app/fieldtypes/RichTextFieldType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/assetsourcetypes/BaseAssetSourceType.php" afterPath="$PROJECT_DIR$/craft/app/assetsourcetypes/BaseAssetSourceType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/craft/app/controllers/BaseController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/craft/app/controllers/DashboardController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/controllers/EntriesController.php" afterPath="$PROJECT_DIR$/craft/app/controllers/EntriesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/elementtypes/AssetElementType.php" afterPath="$PROJECT_DIR$/craft/app/elementtypes/AssetElementType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/elementtypes/BaseElementType.php" afterPath="$PROJECT_DIR$/craft/app/elementtypes/BaseElementType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/elementtypes/CategoryElementType.php" afterPath="$PROJECT_DIR$/craft/app/elementtypes/CategoryElementType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/elementtypes/EntryElementType.php" afterPath="$PROJECT_DIR$/craft/app/elementtypes/EntryElementType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/elementtypes/IElementType.php" afterPath="$PROJECT_DIR$/craft/app/elementtypes/IElementType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/elementtypes/UserElementType.php" afterPath="$PROJECT_DIR$/craft/app/elementtypes/UserElementType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/etc/i18n/PhpMessageSource.php" afterPath="$PROJECT_DIR$/craft/app/etc/i18n/PhpMessageSource.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/etc/image/Image.php" afterPath="$PROJECT_DIR$/craft/app/etc/image/Image.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/helpers/IOHelper.php" afterPath="$PROJECT_DIR$/craft/app/helpers/IOHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/helpers/JsonHelper.php" afterPath="$PROJECT_DIR$/craft/app/helpers/JsonHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/helpers/LocalizationHelper.php" afterPath="$PROJECT_DIR$/craft/app/helpers/LocalizationHelper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/helpers/StringHelper.php" afterPath="$PROJECT_DIR$/craft/app/helpers/StringHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/models/CategoryModel.php" afterPath="$PROJECT_DIR$/craft/app/models/CategoryModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/records/FieldRecord.php" afterPath="$PROJECT_DIR$/craft/app/records/FieldRecord.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/helpers/UpdateHelper.php" afterPath="$PROJECT_DIR$/craft/app/helpers/UpdateHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/css/cp.css" afterPath="$PROJECT_DIR$/craft/app/resources/css/cp.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/css/craft.css" afterPath="$PROJECT_DIR$/craft/app/resources/css/craft.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/js/QuickPostWidget.js" afterPath="$PROJECT_DIR$/craft/app/resources/js/QuickPostWidget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/js/compressed/QuickPostWidget.js" afterPath="$PROJECT_DIR$/craft/app/resources/js/compressed/QuickPostWidget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/js/compressed/QuickPostWidget.min.map" afterPath="$PROJECT_DIR$/craft/app/resources/js/compressed/QuickPostWidget.min.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/js/compressed/craft.js" afterPath="$PROJECT_DIR$/craft/app/resources/js/compressed/craft.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/js/compressed/craft.min.map" afterPath="$PROJECT_DIR$/craft/app/resources/js/compressed/craft.min.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/js/craft.js" afterPath="$PROJECT_DIR$/craft/app/resources/js/craft.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/lib/redactor/redactor.js" afterPath="$PROJECT_DIR$/craft/app/resources/lib/redactor/redactor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/resources/lib/redactor/redactor.min.js" afterPath="$PROJECT_DIR$/craft/app/resources/lib/redactor/redactor.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/services/ElementsService.php" afterPath="$PROJECT_DIR$/craft/app/services/ElementsService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/services/RoutesService.php" afterPath="$PROJECT_DIR$/craft/app/services/RoutesService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/templates/_components/fieldtypes/RichText/settings.html" afterPath="$PROJECT_DIR$/craft/app/templates/_components/fieldtypes/RichText/settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/templates/_elements/sources.html" afterPath="$PROJECT_DIR$/craft/app/templates/_elements/sources.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/templates/_includes/forms.html" afterPath="$PROJECT_DIR$/craft/app/templates/_includes/forms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/templates/categories/_index.html" afterPath="$PROJECT_DIR$/craft/app/templates/categories/_index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/templates/utils/logs.html" afterPath="$PROJECT_DIR$/craft/app/templates/utils/logs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/ar.php" afterPath="$PROJECT_DIR$/craft/app/translations/ar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/cs.php" afterPath="$PROJECT_DIR$/craft/app/translations/cs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/da.php" afterPath="$PROJECT_DIR$/craft/app/translations/da.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/de.php" afterPath="$PROJECT_DIR$/craft/app/translations/de.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/en_gb.php" afterPath="$PROJECT_DIR$/craft/app/translations/en_gb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/es.php" afterPath="$PROJECT_DIR$/craft/app/translations/es.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/fr.php" afterPath="$PROJECT_DIR$/craft/app/translations/fr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/fr_ca.php" afterPath="$PROJECT_DIR$/craft/app/translations/fr_ca.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/he.php" afterPath="$PROJECT_DIR$/craft/app/translations/he.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/hu.php" afterPath="$PROJECT_DIR$/craft/app/translations/hu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/it.php" afterPath="$PROJECT_DIR$/craft/app/translations/it.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/ja.php" afterPath="$PROJECT_DIR$/craft/app/translations/ja.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/ko.php" afterPath="$PROJECT_DIR$/craft/app/translations/ko.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/nl.php" afterPath="$PROJECT_DIR$/craft/app/translations/nl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/no.php" afterPath="$PROJECT_DIR$/craft/app/translations/no.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/ru.php" afterPath="$PROJECT_DIR$/craft/app/translations/ru.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/sk.php" afterPath="$PROJECT_DIR$/craft/app/translations/sk.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/sv.php" afterPath="$PROJECT_DIR$/craft/app/translations/sv.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/tr.php" afterPath="$PROJECT_DIR$/craft/app/translations/tr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/translations/zh.php" afterPath="$PROJECT_DIR$/craft/app/translations/zh.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/services/MatrixService.php" afterPath="$PROJECT_DIR$/craft/app/services/MatrixService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/templates/categories/_edit.html" afterPath="$PROJECT_DIR$/craft/app/templates/categories/_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/variables/ElementTypeVariable.php" afterPath="$PROJECT_DIR$/craft/app/variables/ElementTypeVariable.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/vendor/autoload.php" afterPath="$PROJECT_DIR$/craft/app/vendor/autoload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/craft/app/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/ReviewsPlugin.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/ReviewsPlugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_DashboardController.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ParserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/models/Reviews_ParserModel.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/models/Reviews_ParserModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ReviewService.php" afterPath="$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ReviewService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/templates/dashboard/index.html" afterPath="$PROJECT_DIR$/craft/plugins/reviews/templates/dashboard/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html" afterPath="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/craft/app/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/app/vendor/imagine/imagine/lib/Imagine/Imagick/Layers.php" afterPath="$PROJECT_DIR$/craft/app/vendor/imagine/imagine/lib/Imagine/Imagick/Layers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/config/general.php" afterPath="$PROJECT_DIR$/craft/config/general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/config/routes.php" afterPath="$PROJECT_DIR$/craft/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/reviews/resources/js/dashboard.js" afterPath="$PROJECT_DIR$/craft/plugins/reviews/resources/js/dashboard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/README.md" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/SeomaticPlugin.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/SeomaticPlugin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/config.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/controllers/SeomaticController.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/controllers/SeomaticController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/fieldtypes/Seomatic_MetaFieldType.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/fieldtypes/Seomatic_MetaFieldType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/models/Seomatic_MetaFieldModel.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/models/Seomatic_MetaFieldModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/models/Seomatic_SettingsModel.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/models/Seomatic_SettingsModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/records/Seomatic_SettingsRecord.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/records/Seomatic_SettingsRecord.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/releases.json" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/releases.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/services/SeomaticService.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/services/SeomaticService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/_preview_tags_modal.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/_preview_tags_modal.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/_seo_meta.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/_seo_meta.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/_seo_metaPreview.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/_seo_metaPreview.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/creator/_edit.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/creator/_edit.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/identity/_edit.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/identity/_edit.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/json-ld/_json-ld.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/json-ld/_json-ld.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/meta/_edit.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/meta/_edit.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/meta/index.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/meta/index.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/settings.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/settings.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/site/_edit.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/site/_edit.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/social/_edit.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/social/_edit.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/templates/welcome.twig" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/templates/welcome.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/twigextensions/SeomaticTwigExtension.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/twigextensions/SeomaticTwigExtension.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/plugins/seomatic/variables/SeomaticVariable.php" afterPath="$PROJECT_DIR$/craft/plugins/seomatic/variables/SeomaticVariable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/templates/category-page.html" afterPath="$PROJECT_DIR$/craft/templates/category-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/templates/includes/_footer.html" afterPath="$PROJECT_DIR$/craft/templates/includes/_footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/templates/includes/product-detail-page/_schumer-box.html" afterPath="$PROJECT_DIR$/craft/templates/includes/product-detail-page/_schumer-box.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/templates/includes/product-detail-page/_staff-review.html" afterPath="$PROJECT_DIR$/craft/templates/includes/product-detail-page/_staff-review.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/templates/layouts/_base.html" afterPath="$PROJECT_DIR$/craft/templates/layouts/_base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/application.js" afterPath="$PROJECT_DIR$/public/assets/js/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/craft/templates/product-detail-page.html" afterPath="$PROJECT_DIR$/craft/templates/product-detail-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/cc-card-category.css" afterPath="$PROJECT_DIR$/public/assets/css/cc-card-category.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/reviews.css" afterPath="$PROJECT_DIR$/public/assets/css/reviews.css" />
     </list>
     <ignored path="craft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,83 +100,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/dashboard/index.html">
+      <file leaf-file-name="product-detail-page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/templates/product-detail-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.5">
-              <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+            <state vertical-scroll-proportion="-26.166666">
+              <caret line="130" column="7" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OfferClick_OfferClickService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/offerclick/services/OfferClick_OfferClickService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.25075987">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/templates/includes/_header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/application.js">
+      <file leaf-file-name="OfferClick_OfferClickController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/offerclick/controllers/OfferClick_OfferClickController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="21" column="67" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Products_CreditcardController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/craft/plugins/products/controllers/Products_CreditcardController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/resources/js/dashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_basic.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/templates/layouts/_basic.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.2916667">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/templates/layouts/_base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125">
-              <caret line="44" column="43" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/readme.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.14634146">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reviews_ReviewController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Reviews_ReviewService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ReviewService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -195,8 +158,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -206,34 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/recipes/database.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/recipes/craft.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/recipes/packages.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/recipes/php.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/recipes/server.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/recipes/subversion.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/recipes/default.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/metadata.rb" />
-        <option value="$PROJECT_DIR$/vagrant/cookbooks/craft/Vagrantfile" />
-        <option value="$PROJECT_DIR$/vagrant/Vagrantfile" />
-        <option value="$PROJECT_DIR$/private/README.md" />
-        <option value="$PROJECT_DIR$/private/roles/base.rb" />
-        <option value="$PROJECT_DIR$/private/cookbooks/craft/recipes/database.rb" />
-        <option value="$PROJECT_DIR$/private/cookbooks/craft/recipes/php.rb" />
-        <option value="$PROJECT_DIR$/private/cookbooks/craft/metadata.rb" />
-        <option value="$PROJECT_DIR$/private/Vagrantfile" />
-        <option value="$PROJECT_DIR$/private/cookbooks/craft/templates/default/craft.conf.erb" />
-        <option value="$PROJECT_DIR$/craft/plugins/reviews/composer.json" />
-        <option value="$PROJECT_DIR$/craft/config/db.php" />
-        <option value="$PROJECT_DIR$/craft/templates/layouts/_basic.html" />
-        <option value="$PROJECT_DIR$/craft/templates/layouts/_base.html.twig" />
-        <option value="$PROJECT_DIR$/craft/templates/index.html.twig" />
-        <option value="$PROJECT_DIR$/craft/templates/includes/_footer.html.twig" />
-        <option value="$PROJECT_DIR$/craft/templates/index.html" />
-        <option value="$PROJECT_DIR$/craft/storage/runtime/logs/craft.log" />
-        <option value="$PROJECT_DIR$/craft/plugins/reviews/repositories/ReviewRepository.php" />
-        <option value="$PROJECT_DIR$/craft/plugins/reviews/repositories/Reviews_ReviewRepository.php" />
-        <option value="$PROJECT_DIR$/craft/plugins/mongo/services/Mongo_ConnectionService.php" />
         <option value="$PROJECT_DIR$/craft/plugins/mongo/services/MongoService.php" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/ReviewsController.php" />
         <option value="$PROJECT_DIR$/craft/plugins/products/controllers/Products_CreditcardController.php" />
@@ -252,11 +187,39 @@
         <option value="$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/js/dashboard.js" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ReviewService.php" />
-        <option value="$PROJECT_DIR$/craft/plugins/reviews/resources/js/dashboard.js" />
         <option value="$PROJECT_DIR$/craft/plugins/reviews/templates/dashboard/index.html" />
         <option value="$PROJECT_DIR$/public/assets/js/application.js" />
-        <option value="$PROJECT_DIR$/craft/templates/layouts/_base.html" />
         <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/craft/plugins/reviews/resources/js/dashboard.js" />
+        <option value="$PROJECT_DIR$/craft/plugins/editorial/EditorialPlugin.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/offerclick/OfferClickPlugin.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/offerclick/templates/index.html" />
+        <option value="$PROJECT_DIR$/craft/plugins/editorial/templates/index.html" />
+        <option value="$PROJECT_DIR$/craft/config/general.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/analytics/AnalyticsPlugin.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/analytics/templates/index.html" />
+        <option value="$PROJECT_DIR$/craft/plugins/accesscontrol/AccessControlPlugin.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/accesscontrol/templates/index.html" />
+        <option value="$PROJECT_DIR$/craft/templates/category-page.html" />
+        <option value="$PROJECT_DIR$/craft/plugins/offerclick/resources/js/loading.js" />
+        <option value="$PROJECT_DIR$/craft/plugins/events/controllers/Events_CalendarsController.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/offerclick/controllers/OfferClickController.php" />
+        <option value="$PROJECT_DIR$/craft/config/routes.php" />
+        <option value="$PROJECT_DIR$/public/.htaccess" />
+        <option value="$PROJECT_DIR$/craft/.htaccess" />
+        <option value="$PROJECT_DIR$/public/assets/js/offer-click/loading.js" />
+        <option value="$PROJECT_DIR$/public/assets/css/cc-card-category.css" />
+        <option value="$PROJECT_DIR$/craft/templates/includes/product-detail-page/_staff-review.html" />
+        <option value="$PROJECT_DIR$/public/assets/css/reviews.css" />
+        <option value="$PROJECT_DIR$/craft/templates/layouts/_base.html" />
+        <option value="$PROJECT_DIR$/craft/templates/includes/_loading.html" />
+        <option value="$PROJECT_DIR$/craft/templates/product-detail-page.html" />
+        <option value="$PROJECT_DIR$/craft/templates/includes/_footer.html" />
+        <option value="$PROJECT_DIR$/craft/templates/includes/product-detail-page/_schumer-box.html" />
+        <option value="$PROJECT_DIR$/public/assets/js/offer-click.js" />
+        <option value="$PROJECT_DIR$/craft/plugins/offerclick/services/OfferClickService.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/offerclick/controllers/OfferClick_OfferClickController.php" />
+        <option value="$PROJECT_DIR$/craft/plugins/offerclick/services/OfferClick_OfferClickService.php" />
       </list>
     </option>
   </component>
@@ -274,7 +237,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="807" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -301,7 +264,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,50 +313,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="craft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="craft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="craft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="craft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -424,12 +342,83 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="curl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="craft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="curl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -443,19 +432,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/js/offer-click" />
+      <recent name="$PROJECT_DIR$/craft/plugins" />
+      <recent name="$PROJECT_DIR$/craft/plugins/editorial" />
+      <recent name="$PROJECT_DIR$/private/cookbooks" />
+      <recent name="$PROJECT_DIR$/vagrant/cookbooks" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/js" />
       <recent name="$PROJECT_DIR$/craft/plugins/reviews/resources" />
       <recent name="$PROJECT_DIR$/craft/plugins" />
       <recent name="$PROJECT_DIR$/craft/plugins/reviews/templates/dashboard" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/craft/plugins/products/templates/products" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/private/cookbooks" />
-      <recent name="$PROJECT_DIR$/vagrant/cookbooks" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/craft/plugins/mongo" />
-      <recent name="$PROJECT_DIR$/craft/plugins/reviews/templates/parsers" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.overview.html">
@@ -520,12 +509,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="807" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28612304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29470673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38912135" sideWeight="0.5114449" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3888889" sideWeight="0.5114449" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -538,9 +527,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.49570817" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32624114" sideWeight="0.49570817" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3895921" sideWeight="0.48855507" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38865247" sideWeight="0.48855507" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -659,279 +648,26 @@
           <line>83</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/craft/plugins/offerclick/controllers/OfferClick_OfferClickController.php</url>
+          <line>21</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/craft/plugins/offerclick/controllers/OfferClick_OfferClickController.php</url>
+          <line>19</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="167" />
+      <option name="time" value="170" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/craft/storage/runtime/logs/craft.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.066667">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/framework/YiiBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="437" column="0" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/vendor/mongodb/mongodb/src/Operation/Find.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.75">
-          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/models/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.25">
-          <caret line="356" column="0" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/site/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34039333">
-          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/vendor/composer/ClassLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/vendor/mongodb/mongodb/src/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4895288">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/vendor/mongodb/mongodb/src/Operation/UpdateMany.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.552356">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/vendor/mongodb/mongodb/src/Operation/Update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.791667">
-          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/vendor/mongodb/mongodb/src/Collection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62827224">
-          <caret line="689" column="0" selection-start-line="689" selection-start-column="0" selection-end-line="689" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/products/controllers/Products_TopCardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/products/controllers/Products_ProductCategoryMapController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/maps/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7460733">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ParserService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.666666">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/framework/base/CApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3333334">
-          <caret line="726" column="0" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/maps/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.0">
-          <caret line="40" column="85" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/issuers/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/maps/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IdMapController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="52" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/variables/ReviewsVariable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/templates/_includes/forms/elementSelect.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39252338">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/ReviewsPlugin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.708333">
-          <caret line="59" column="94" selection-start-line="59" selection-start-column="94" selection-end-line="59" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/products/controllers/Products_CreditcardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="59" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/controllers/AssetsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6753926">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/app/etc/web/UrlManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/parsers/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/models/Reviews_ParserModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/config/redactor/Standard.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/events/controllers/Events_CalendarsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/config/general.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_IssuerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_IssuerService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="48" column="33" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/craft/app/Craft.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="469" column="0" selection-start-line="469" selection-start-column="0" selection-end-line="469" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,7 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,21 +682,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/controllers/Reviews_ReviewController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
+        <state vertical-scroll-proportion="0.0">
           <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/services/Reviews_ReviewService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
+        <state vertical-scroll-proportion="0.0">
           <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
           <folding />
         </state>
@@ -975,29 +708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/dashboard/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.5">
-          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/craft/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.78756475">
           <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,38 +719,319 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.51554406">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/events/variables/EventsVariable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/events/services/Events_CalendarsService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.022970904">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/layouts/_basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="41" selection-start-line="117" selection-start-column="41" selection-end-line="117" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/templates/dashboard/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.625">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/craft/plugins/reviews/resources/js/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/craft/templates/layouts/_basic.html">
+    <entry file="file://$PROJECT_DIR$/craft/plugins/offerclick/OfferClickPlugin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2916667">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.114854515">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/craft/templates/layouts/_base.html">
+    <entry file="file://$PROJECT_DIR$/craft/plugins/editorial/EditorialPlugin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="44" column="43" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/offerclick/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/config/license.key">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/config/general.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22970903">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/editorial/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14634146">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/analytics/AnalyticsPlugin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/accesscontrol/AccessControlPlugin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/accesscontrol/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/cc-misc.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3093415">
+          <caret line="551" column="22" selection-start-line="551" selection-start-column="22" selection-end-line="551" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/offerclick/resources/js/loading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11078287">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/events/controllers/Events_CalendarsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/products/controllers/Products_CreditcardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/analytics/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32159266">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/category-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-40.333332">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/app/services/RoutesService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.708333">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/app/etc/web/UrlManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.875">
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/app/framework/base/CApplication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="726" column="0" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/site/controllers/Site_ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48387095">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/app/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92612135">
+          <caret line="250" column="6" selection-start-line="250" selection-start-column="6" selection-end-line="250" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/cc-card-category.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.529412">
+          <caret line="1178" column="21" selection-start-line="1178" selection-start-column="21" selection-end-line="1178" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/includes/product-detail-page/_staff-review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2941177">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/reviews.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3821138">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/includes/_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/layouts/_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50757575">
+          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/includes/_footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5">
+          <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/offer-click.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5033557">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/includes/product-detail-page/_schumer-box.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14393939">
+          <caret line="11" column="142" selection-start-line="11" selection-start-column="142" selection-end-line="11" selection-end-column="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/includes/_loading.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/templates/product-detail-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.166666">
+          <caret line="130" column="7" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/curl/services/Curl_CurlService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13677812">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/offerclick/controllers/OfferClick_OfferClickController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="21" column="67" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/craft/plugins/offerclick/services/OfferClick_OfferClickService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25075987">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -9,7 +9,7 @@
 {% includeJsResource "seomatic/js/jquery.bpopup.min.js" %}
 {% includeJsResource "seomatic/js/prism.min.js" %}
 
-{% set title = "SEOmatic"|t %}
+{% set title = craft.seomatic.getPluginName() %}
 
 {% set fullPageForm = true %}
 {% set hasCustomLayout = true %}
@@ -26,7 +26,7 @@
 } %}
 
 {% set crumbs = [
-    { label: "SEOmatic"|t, url: url('seomatic') },
+    { label: craft.seomatic.getPluginName(), url: url('seomatic') },
     { label: "Social Media"|t, url: url('seomatic/social') },
 ] %}
 
@@ -58,7 +58,7 @@
         <div class="grid first">
             <div class="item" data-position="left" data-min-colspan="2" data-max-colspan="3">
                 <div id="fields" class="pane">
-                {% if tabs is defined %}
+                {% if tabs is defined and tabs|length %}
                     {% include "_includes/tabs" %}
                 {% endif %}
 

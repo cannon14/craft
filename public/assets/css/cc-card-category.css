@@ -1124,18 +1124,6 @@ a.back-to-top {
 .newloading-bg {
     background-color:#0C4E77;
 }
-.newloading-bg .t-page-block .container {
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    -ms-transform:translateY(-50%); /* IE */
-    -moz-transform:translateY(-50%); /* Firefox */
-    -webkit-transform:translateY(-50%); /* Safari and Chrome */
-    -o-transform:translateY(-50%); /* Opera */
-    vertical-align:top;
-    width: 100%;
-}
 .newloading-bg .t-page-block .container .row {
     padding: 0;
     margin: 20px;
@@ -1178,7 +1166,7 @@ a.back-to-top {
     margin: auto;
     width: 19px;
     height: 20px;
-    background: url("/assets/images/category/mobile-lock.png");
+    background: url("/assets/images/mobile-lock.png");
 }
 
 @media (min-width: 768px) {
@@ -1189,7 +1177,7 @@ a.back-to-top {
     .newloading-bg .lock {
         width: 24px;
         height: 25px;
-        background: url("/assets/images/category/lock.png");
+        background: url("/assets/images/lock.png");
     }
     .newloading-bg .t-page-block .container p span {
         font-size: 32px;

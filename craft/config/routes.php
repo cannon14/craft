@@ -19,5 +19,8 @@
  */
 
 return array(
-    'credit-cards/(.+)' => array('action' => 'site/product/showProduct'),
+    //desired url => array('action' => plugin/controller/method
+    'offer-click'      => array('action' => 'offerClick/offerClick/offerClick'),
+    'credit-cards/(.+)'             => array('action' => 'site/product/showProduct'),
+
 );

@@ -1,7 +1,6 @@
 <!-- Site Footer Content Block-->
 <div class="footer-block">
     <div class="container">
-
         <div class="row row-border">
             <div class="col-md-4">
                 <div class="footer-secure"> <a href="/SSL-Security"><img src="/assets/images/404-footer-security-lock.png" class="img-responsive" width="132" height="50"></a> <div id="8e14851f-6d2b-497f-aa08-6f6bf9caf9d6">
@@ -112,3 +111,8 @@
 </div>
 
 {% include 'includes/_advertiser-disclosure-modal' %}
+
+{# Include the loading page if the page has an offer to click on.  'offer_click' variable must be set on template #}
+{% if offer_click is defined %}
+{% include 'includes/_loading' %}
+{% endif %}

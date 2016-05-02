@@ -36,6 +36,8 @@ Please read the complete documentation in the [SEOmatic Wiki](https://github.com
 
 To better understand how all of this metadata benefits your website, please read: [Promote Your Content with Structured Data Markup](https://developers.google.com/structured-data/)
 
+If you need to redirect from legacy URLs to preserve SEO value when rebuilding & restructuring a website, check out the [Retour Plugin](https://github.com/nystudio107/retour)
+
 ## Roadmap
 
 Some things to do, and ideas for potential features:
@@ -47,9 +49,17 @@ Some things to do, and ideas for potential features:
 * [feature] Add the ability to analyze a page for content vs. keywords for the SEO Template Metas, "just like Yoast"
 * [feature] Change the preview to a live preview when editing things in SEOmatic
 * [feature] Provide SiteMap functionality.  Yes, it's SEO-related, but seems like it might be better to keep SEOmatic focused (?)
-* [feature] Provide Redirect functionality.  Yes, it's SEO-related, but seems like it might be better to keep SEOmatic focused (?)
 
 ## Changelog
+
+### 1.1.16 -- 2016.04.29
+
+* [Added] Added `craft()->seomatic->headlessRenderSiteMeta()` for headless Craft CMS installs
+* [Improved] Fixed an issue where Twitter and Facebook properties were double-encoded
+* [Fixed] Fixed a visual display issue with tabs and Craft 2.4.x
+* [Fixed] Fixed a localization issue with extractTextFromMatrix()
+* [Improved] SEOmatic now converts any objects passed into ths seomatic variables to string automatically* 
+* [Improved] Updated the README.md
 
 ### 1.1.15 -- 2016.04.25
 

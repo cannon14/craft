@@ -26,7 +26,7 @@
 } %}
 
 {% set crumbs = [
-    { label: "SEOmatic"|t, url: url('seomatic') },
+    { label: craft.seomatic.getPluginName(), url: url('seomatic') },
     { label: "Template Meta"|t, url: url('seomatic/meta') },
 ] %}
 
@@ -67,8 +67,8 @@
             <div class="grid first">
                 <div class="item" data-position="left" data-min-colspan="2" data-max-colspan="3">
                     <div id="fields" class="pane">
-                        {% if tabs is defined %}
-                            {% include "_includes/tabs" %}
+                        {% if tabs is defined and tabs|length %}
+                            {% include "_includes/tabs" with tabs only %}
                         {% endif %}
                         {% include "seomatic/meta/_main" %}
 

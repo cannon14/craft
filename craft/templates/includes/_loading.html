@@ -1,0 +1,29 @@
+<div class="modal fade" id="loading-modal" tabindex="-1" role="dialog" style="width:100%">
+    <div class="modal-dialog" style="width:80%">
+        <div class="modal-content">
+            <div class="modal-body newloading-bg">
+                <div class="t-page-block">
+                    <div class="container">
+                        <div class="row">
+                            <p>
+                                <span>Transferring you</span><br>to {{ card.issuer_name }}'s <i>secure</i> application
+                            </p>
+                            <div class="lock"></div>
+                            <div class="load-hldr">
+                                <div class="figure">
+                                    <img src="/assets/images/cclogo_219x90.png">
+                                </div>
+                                <div class="figure">
+                                    <img src="/assets/images/arrow-time.gif">
+                                </div>
+                                <div class="figure">
+                                    <img src="http://www.imgsynergy.com/191x120/{{ card.image }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--modal-body-->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

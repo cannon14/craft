@@ -5,22 +5,22 @@
 </div><!--row-->
 
 {% if card.review_overall_rating is defined and card.review_overall_rating != '0.00' %}
-<div class="row">
-    <div class="col-sm-4 col-md-4 col-lg-4 text-center" style="border:thin solid #999999; padding:10px">
+<div class="row staff-review">
+    <div class="col-xs-24 col-sm-6 col-md-4 col-lg-4 text-center staff-review-star-rating">
         <p>
             <strong>Editor's Rating:</strong>
         </p>
-        <div class="pd-star-rating">
+        <p>
             <input type="number" value="{{ card.review_overall_rating }}" data-size="xs" data-show-caption="false" class="category-star-rating rating form-control">
-        </div>
+        </p>
         <p>
             <strong>{{ card.review_overall_rating | trim('0') }} out of 5</strong>
         </p>
     </div><!--column-->
-        <div class="col-sm-12 col-md-12 col-lg-12" style="border:thin solid #999999; padding:10px">
-            {{ card.review | raw }}
-                <a href="{{ card.review_link }}?catid={{ craft.request.getParam('catId') }}" class="review-link">Read full review</a>
-        </div>
+    <div class="col-xs-24 col-sm-12 col-md-12 col-lg-12 staff-review-text">
+        {{ card.review | raw }}
+            <a href="{{ card.review_link }}?catid={{ craft.request.getParam('catId') }}" class="review-link">Read full review</a>
+    </div>
 </div><!--row-->
 {% else %}
 <div class="row">
