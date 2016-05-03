@@ -112,16 +112,5 @@ $(document).ready(function() {
 
     //Function for all bootstrap tooltips sitewide.
     $('[data-toggle="tooltip"]').tooltip();
-    //Get the show more button.
-    var showMore = $(".show-more-results");
-    //Get the name of the page containing the next set of cards from the link tags in the header.
-    var nextPage = $('link[rel="next"]');
 
-    if(nextPage.length > 0) {
-        nextPage = nextPage.attr('href');
-        showMore.css('display', 'block');
-    }
-    else {
-        showMore.css('display', 'none');
-    }
 });
